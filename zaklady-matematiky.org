@@ -1,0 +1,171 @@
+#+TITLE: Základy Matematiky
+#+language: cz
+#+latex_class_options: [bigger]
+#+latex_header_extra: \usetheme{Rochester}
+#+latex_header_extra: \usecolortheme{crane}
+#+latex_header_extra: \usepackage[czech]{babel}
+#+options: h:2
+* Logika
+** Výroková logika
+*** Výrok
+tvrzení (oznamovací věta) o kterém má smysl uvažovat, zda je nebo není pravdivý
+  + Prší.
+  + Osm je větší než devět; ($8\ge9$)
+  + Ve vesmíru existuje inteligentní život mimo zemi.
+*** Není výrok
+  - Kolikátého je?
+  - Ahoj.
+  - $x\ge7$
+** Ohodnocení výroku
+*** Pravdivý výrok
+\[1\]
+*** Nepravdivý výrok
+\[0\]
+** složený výrok
++ negace $\neg$ :: není pravda,
++ konjunkce $\wedge$ :: a (zároveň)
++ disjunkce  $\vee$ :: nebo
++ xor $\oplus$ :: platí právě (a jen) jedna z možností
++ implikace $\Rightarrow$ :: jestliže, pak
++ ekvivalence $\Leftrightarrow$ :: tehdy a jen tehdy, když
+** Tabulka složených výroků
+#+ATTR_HTML: :rules all
+| A | B | $\neg A$ | $A \wedge B$ | $A \vee B$ | $A \Rightarrow B$ | $A \Leftrightarrow B$ | $A \oplus B$ |
+|---+---+----------+--------------+------------+-------------------+-----------------------+--------------|
+|   |   |   <c>    |     <c>      |    <c>     |        <c>        |          <c>          |     <c>      |
+| 0 | 0 |    1     |      0       |     0      |         1         |           1           |      0       |
+| 1 | 0 |    0     |      0       |     1      |         0         |           0           |      1       |
+| 0 | 1 |    1     |      0       |     1      |         1         |           0           |      1       |
+| 1 | 1 |    0     |      1       |     1      |         1         |           1           |      0       |
+** Tautologie
+ + vždy pravdivé tvrzení
+
+
+*** Některé známé tautologie
+  |                         <c>                         |                         |
+  |               $\neg(\neg A \wedge A)$               | Zákon sporu             |
+  |                   $\neg A \vee A$                   | Zákon vyloučení třetího |
+  |                 $\neg \neg A\iff A$                 | Zákon dvojí negace      |
+  |       $\neg A\vee\neg B\iff \neg(A\wedge B)$        | De Morganovy zákony     |
+  |       $\neg A \wedge\neg B\iff \neg(A\vee B)$       |                         |
+  | $(A\Rightarrow B) \iff (\neg B \Rightarrow \neg A)$ | Zákon kontrapozice      |
+
+** Vztah mezi spojkami
++ $\neg A \iff (A\Rightarrow 0)$
++ $(A\Rightarrow B)\iff \neg A \vee B$
++ $A\wedge B\iff \neg(\neg A\vee\neg B)$
++ $(A\Leftrightarrow B) \iff ((A\Rightarrow B)\wedge (B\Rightarrow A))$
++ $A\vee B \iff ((A\Rightarrow B)\Rightarrow B)$
+
+** Negace složených výroků
++ $\neg \neg A \iff A$
++ $\neg (A\wedge B)\iff \neg A\vee \neg B$
++ $\neg (A\Rightarrow B) \iff A\wedge \neg B$
++ $\neg (A\Leftrightarrow B) \iff (\neg A \Leftrightarrow B)$
+** Odvozovací pravidla
++ Modus ponens :: platí-li $A$ a také $A\Rightarrow B$ pak platí $B$
+** Predikátová logika
++ Existuje ::
+  * $\exists x;  V(x)$
+  * $\exists x; x\ge 7$
++ Pro všechna ::
+  * $\forall x;  V(x)$
+  * $\forall x; x\ge 0$
+** Negace kvantifikátorů
++ $\neg \exists x; V(x) \iff \forall x; \neg V(X)$
++ $\neg \forall x; V(x) \iff \exists x; \neg V(X)$
++ Znegujte výroky
+  * Všechna prvočísla jsou sudá.
+  * Daný trojúhelník má jeden vnitřní úhel tupý.
+  * Každé přirozené číslo má alespoň jednoho dělitele.
+** Pořadí kvantifikátorů
+$x,y\in \mathbb{N}$
++ $\forall x,\forall y;\quad x\le y;\quad x< y$;
++ $\forall y,\forall x;\quad x\le y;\quad x< y$;
++ $\forall x,\exists y;\quad x\le y;\quad x< y$;
++ $\exists y,\forall x;\quad x\le y;\quad x< y$;
++ $\forall y,\exists x;\quad x\le y;\quad x< y$;
++ $\exists x,\forall y;\quad x\le y;\quad x< y$;
++ $\exists y,\exists x;\quad x\le y;\quad x< y$;
++ $\exists x,\exists y;\quad x\le y;\quad x< y$;
+** Dokazování
+$A\Rightarrow B$
++ Přímí důkaz :: $A\Rightarrow C_{1}\Rightarrow C_{2}\Rightarrow \dots \Rightarrow C_{n-1} \Rightarrow B$
++ Nepřímí důkaz :: $A\Rightarrow B \iff \neg B \Rightarrow \neg A$
++ Důkaz sporem :: $A\Rightarrow B \iff \neg (A \wedge \neg B)$
++ Důkaz matematickou indukcí ::
+  1. Dokážeme $V(0)$.
+  2. Dokážeme, $V(i-1)\Rightarrow V(i)\quad \forall i\in \mathbb{N}_{0}$.
+  3. Dohromady dostáváme: $V(n),\quad \forall n\in \mathbb{N}_{0}$.
+* Teorie množin
+** Definování množin
++ Výčtem prvků ::
+  * $A=\{a,b,c\}$
+  * $B=\{1,3,5,\dots\}$
++ Předpisem ::
+  * $C=\{x\in \mathbb{N}; 2|x \}$
+  * $D=\{x\in \mathbb{Z}; x > 3 \vee x \le 2 \}$
++ Realný interval ::
+  * $(a,b)=\{x\in \mathbb{R}; a< x< b \}$
+  * $[a,b]=\{x\in \mathbb{R}; a\le x\le b \}$
+  * $(a,b]=\{x\in \mathbb{R}; a< x\le b \}$
+** Padne do množiny
++ Univerzum ::
+  $\mathcal{U}$
++ Padne do množiny :: $x \in A$
++ Nepadne do množiny :: $x \notin A$
++ $\forall x\in \mathcal{U}$ ::
+   $x\in A \oplus x \notin A$
+*** Charakteristická funkce
++ $\chi_{A}(x)=1 \iff x\in A$
++ $\chi_{A}(x)=0 \iff x\notin A$
+
+
+** Podmnožina, Rovnost množin
+*** Podmnožina
+\[A\subseteq B \iff (x\in A\Rightarrow x\in B)\]
+*** Rovnost
+\[A= B \iff (A\subseteq B \wedge B\subseteq A) \iff (x\in A \Leftrightarrow x\in B)\]
+*** Vlastní podmnožina
+\[A\subset B \iff A\subseteq B \wedge A\neq B\]
+** Operace s množinami
++ Sjednocení ::
+  $A\cup B = \{x\in \mathcal U; x\in A\vee x \in B\}$
++ Průnik ::
+  $A\cap B = \{x; x\in A\wedge x \in B\}$
++ Rozdíl ::
+  $A\setminus B = \{x; x\in A\wedge x \notin B\}$
++ Doplněk ::
+  $A'=\mathcal{U}\setminus A = \{x; x\notin A\}$
+** Množinové rovnosti
++ $A\cup A=A$; $A\cap A=A$
++ $A\cup B=A\cup B$; $A\cap B=B\cap A$
++ $A\cup (B\cup C)=(A\cup B) \cup  C=A\cup B\cup C$
++ $A\cup (A\cap B)=A$; $A\cap (A\cup B)=A$;
++ $A\cup (B\cap C)=(A\cap B)\cup (A\cap C)$
++ $A\cap (B\cup C)=(A\cup B)\cap (A\cup C)$
++ $A\setminus (B\cap C)=(A\setminus B)\cup (A\setminus C)$
++ $A\setminus (B\cup C)=(A\setminus B)\cap (A\setminus C)$
++ $(A\setminus B)\setminus C=(A\setminus C)\setminus B=A\setminus (B\cup C)$
++ $A\setminus (A\setminus B)=?$
+
+** Potenční množina
++ množina všech podmnožin
++ $2^{X}=\{Y;Y\subseteq X\}$
++ $A=\{a,b,c\}$
+  + $2^A=\{\{a\},\{b\},\{a,c\},\dots\}$
+  + $|2^{A}|=?$
+** Kartézský součin, mocnina
++ $A=\{a,b,c\}$; $B=\{1,2\}$
++ $X \times Y = \{(x,y); x\in X\wedge y\in Y\}$
+  * $A \times B=\{(a,1),(c,2),\dots \}$
++ $X^{2}=X \times X$
+  * $B^{2}=\{(1,1),(1,2),(2,1),(2,2)\}$
++ $|X \times Y|=?$
+  * $|A\times B|=?$
+  * $|A^{2}|=?$
+** Prázná množina
++ $\emptyset=\{\}$
++ $|\emptyset|=?$
++ $2^{\emptyset}=?$
++ $|\{\emptyset\}|=?$
