@@ -1,8 +1,8 @@
 #+TITLE: Základy Matematiky
 #+language: cz
 #+latex_class_options: [bigger]
-#+latex_header_extra: \usetheme{Rochester}
-#+latex_header_extra: \usecolortheme{crane}
+#+latex_header: \usetheme{Rochester}
+#+latex_header: \usecolortheme{crane}
 #+latex_header_extra: \usepackage[czech]{babel}
 #+options: h:2
 * Logika
@@ -21,7 +21,7 @@ tvrzení (oznamovací věta) o kterém má smysl uvažovat, zda je nebo není pr
 \[1\]
 *** Nepravdivý výrok
 \[0\]
-** složený výrok
+** Složený výrok
 + negace $\neg$ :: není pravda,
 + konjunkce $\wedge$ :: a (zároveň)
 + disjunkce  $\vee$ :: nebo
@@ -93,28 +93,26 @@ $A\Rightarrow B$
 + Přímí důkaz :: $A\Rightarrow C_{1}\Rightarrow C_{2}\Rightarrow \dots \Rightarrow C_{n-1} \Rightarrow B$
 + Nepřímí důkaz :: $A\Rightarrow B \iff \neg B \Rightarrow \neg A$
 + Důkaz sporem :: $A\Rightarrow B \iff \neg (A \wedge \neg B)$
-+ Důkaz matematickou indukcí ::
+*** Důkaz matematickou indukcí
   1. Dokážeme $V(0)$.
-  2. Dokážeme, $V(i-1)\Rightarrow V(i)\quad \forall i\in \mathbb{N}_{0}$.
+  2. Dokážeme, $V(i-1)\Rightarrow V(i)\quad \forall i\in \mathbb{N}$.
   3. Dohromady dostáváme: $V(n),\quad \forall n\in \mathbb{N}_{0}$.
 * Teorie množin
 ** Definování množin
-+ Výčtem prvků ::
-  * $A=\{a,b,c\}$
-  * $B=\{1,3,5,\dots\}$
-+ Předpisem ::
-  * $C=\{x\in \mathbb{N}; 2|x \}$
-  * $D=\{x\in \mathbb{Z}; x > 3 \vee x \le 2 \}$
-+ Realný interval ::
-  * $(a,b)=\{x\in \mathbb{R}; a< x< b \}$
-  * $[a,b]=\{x\in \mathbb{R}; a\le x\le b \}$
-  * $(a,b]=\{x\in \mathbb{R}; a< x\le b \}$
+*** Výčtem prvků
+  \[A=\{a,b,c\};\quad B=\{1,3,5,\dots\}\]
+*** Předpisem
+    \[C=\{x\in \mathbb{N}; 2|x \};\quad D=\{x\in \mathbb{Z}; x > 3 \vee x \le 2 \}\]
+*** Realný interval
+    * $(a,b)=\{x\in \mathbb{R}; a< x< b \}$
+    * $[a,b]=\{x\in \mathbb{R}; a\le x\le b \}$
+    * $(a,b]=\{x\in \mathbb{R}; a< x\le b \}$
 ** Padne do množiny
 + Univerzum ::
   $\mathcal{U}$
 + Padne do množiny :: $x \in A$
 + Nepadne do množiny :: $x \notin A$
-+ $\forall x\in \mathcal{U}$ ::
++ $\forall x\in \mathcal{U}$; ::
    $x\in A \oplus x \notin A$
 *** Charakteristická funkce
 + $\chi_{A}(x)=1 \iff x\in A$
@@ -129,14 +127,11 @@ $A\Rightarrow B$
 *** Vlastní podmnožina
 \[A\subset B \iff A\subseteq B \wedge A\neq B\]
 ** Operace s množinami
-+ Sjednocení ::
-  $A\cup B = \{x\in \mathcal U; x\in A\vee x \in B\}$
-+ Průnik ::
-  $A\cap B = \{x; x\in A\wedge x \in B\}$
-+ Rozdíl ::
-  $A\setminus B = \{x; x\in A\wedge x \notin B\}$
-+ Doplněk ::
-  $A'=\mathcal{U}\setminus A = \{x; x\notin A\}$
+|            |                         <r> |                                             |
+| Sjednocení |                   $A\cup B$ | $= \{x\in \mathcal U; x\in A\vee x \in B\}$ |
+| Průnik     |                   $A\cap B$ | $= \{x; x\in A\wedge x \in B\}$             |
+| Rozdíl     |              $A\setminus B$ | $= \{x; x\in A\wedge x \notin B\}$          |
+| Doplněk    | $A'=\mathcal{U}\setminus A$ | $= \{x; x\notin A\}$                        |
 ** Množinové rovnosti
 + $A\cup A=A$; $A\cap A=A$
 + $A\cup B=A\cup B$; $A\cap B=B\cap A$

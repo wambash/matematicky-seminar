@@ -1,0 +1,152 @@
+#+title: AP1MB
+#+language: cz
+# +latex_class: beamer
+#+latex_header:\usepackage[czech]{babel}
+#+latex_header:\usepackage{amsmath}
+#+options: h:3 toc:nil
+
+* Čísla
+- Přirozená čísla :: $\mathbb{N}=\{1,2,\dots\}$; $\mathbb{N}_{0}=\{0,1,2,\dots\}$
+- Celá čísla :: $\mathbb{Z}=\{\dots,-3,-2,-1,0,1,2,3, \dots\}$
+- Racionální čísla :: $\mathbb{Q}=\{\frac{a}{b}; a,b\in \mathbb{Z}, b\neq 0\}$; zlomky celých čísel
+- Realná čísla :: $\mathbb{R}$, např.
+  $\sqrt{2}, e, \pi, \dots$
+- Komplexní čísla :: $\mathbb{C}$, $a+bi$, kde $a$ a $b$ jsou z $\mathbb{R}$ a $i^{2}=-1$
+
+* Operace s čísly
+** sčítání
+$a+b$
++ $a+0=a=0+a$
++ $0$ neutrální prvek vzhledem k $+$
++ $a+b=b+a$
++ $(a+b)+c=a+(b+c)=a+b+c$
+
+** opačné číslo
+$-a$
++ $a+(-a)=0$
++ $-(-a)=a$
++ inverzní prvek k $a$ vzhledem k $+$
+
+** odčítání
+$a-b=c$
++ $a=b+c$
++ $a-b=a+(-b)$
++ $(a-b)-c = a-(b+c)$
++ $a-(b-c) = (a-b)+c = (a+c)-b$
+
+** násobení
+$a\cdot b = ab$
++ $1\cdot a= a$
++ $1$ neutrální prvek vzhledem k $\cdot$
++ $0\cdot a= 0$
++ $0$ agresivní prvek vzhledem k $\cdot$
++ $a\cdot b = b \cdot a$
++ $a\cdot (b \cdot c)= (a\cdot b)\cdot c = a\cdot b \cdot c$
++ $a\cdot (b+c) = (a\cdot b)+(a\cdot c)$
+
+** převrácená hodnota
+$a^{-1}=\frac{1}{a}$
++ $a^{-1}\cdot a =1$
++ $(a^{-1})^{-1}=a$
++ inverzní prvek k $a$ vzhledem k $\cdot$
++ $0^{-1}=???$
+
+** dělení
+$\frac{a}{b}=a:b=a/b$
++ $\frac{a}{b}=a\cdot b^{-1}$
++ $(\frac{a}{b})^{-1}=\frac{b}{a}$
++ $\frac{a}{b}\cdot\frac{c}{d}=\frac{a\cdot c}{b\cdot d}$
++ $\frac{\frac{a}{b}}{\frac{c}{d}}=\frac{a}{b}\cdot\frac{d}{c}=\frac{a\cdot d}{b\cdot c}$
++ $\frac{a}{b}+\frac{c}{d}=\frac{a\cdot d+c\cdot b}{b\cdot d}$, ($\gcd$ ?)
++ $\frac{a}{b}=\frac{a\cdot c}{b\cdot c}$, pro $c\neq 0$
+
+** umocňování
+$z^{n}=\underbrace{ z \cdot z \cdot z \cdots z }_{n}$
++ $a^{l}\cdot a^{k}=a^{l+k}$
++ $(a^{l})^{k}=a^{l\cdot k}$
++ $(a^{l})^{-1}=a^{-l}$
++ $a^{l}\cdot b^{l}=(a\cdot b)^{l}$
++ $(\frac{a}{b})^{l}=\frac{a^{l}}{b^{l}}$
++ $a^{0}=1$, $a\neq 0$
++ $0^{l}=0$, $l\neq 0$, $1^{k}=1$
++ $0^0= ???$
+
+** vzorce pro umocňování
+ + $(a-b)^2=a^2-2ab+b^2$
+ + $(a+b)^2=a^2+2ab+b^2$
+ + $a^{2}-b^2=(a+b)\cdot (a-b)$
+ + $(a+b)^{3}=a^{3}+3a^{2}b+3ab^{2}-b^{3}$
+ + $a^{3}+b^{3}=(a+b)(a^{2}-ab+b^{2})$
+ + $a^{3}-b^{3}=(a-b)(a^{2}+ab+b^{2})$
+ + $(a+b)^{n}=???$, $n\in \mathbb{N}$
+ + $a^{2}+b^{2}=???$
+
+** odmocňování
+$\sqrt[l]{a}=b$
++ $a=b^{l}$
++ $\sqrt{a}=\sqrt[2]{a}$
++ $\sqrt[l]{a\cdot b}=\sqrt[l]{a}\cdot\sqrt[l]{b}$
++ $\sqrt[l]{\sqrt[k]{a}}=\sqrt[l\cdot k]{a}$
++ $\sqrt[l]{a^{k}}=(\sqrt[l]{a})^{k}=a^{\frac{k}{l}}$, $a\ge 0$
++ $\sqrt{(-1)^{2}}=???$
++ $(\sqrt{-1})^{2}=???$
+
+* Dělitelnost
+** Celočíselné dělení se zbytkem
+$a\div b=q$;
++ $a=q\cdot b + r,\quad 0\le r < |b|$; $q\in \mathbb{Z}$
++ $a\mod b=r$
+** Dělí (celočíselný násobek)
+$a|b$
++ $b = q\cdot a$
++ $b \mod a=0$
++ $a|b$ a $c|d$ pak $a c |b d$
++ $a|b$ a $b|c$ pak $a |c$
++ $a|b$ a $a|c$ pak $a|(b+c)$
++ $a|b$ pak $a|bc$
++ $1|b$
++ $a|0$
+** Prvočíslo
+$2,3,5,7,11, 13,\dots$
++ přirozené číslo dělitelné (právě) dvěma (různými) přirozenými čísly (sebou a jedničkou)
++ prvočíselný rozklad, každé přirozené číslo větší než 2, lze jednoznačně (až na pořadí) zapsat jako součin prvočísel
++ kdy je číslo dělitelné $2,3,4,5,6,8,9,10,\dots$ ?
++ číslo složené
+** Největší Společný Dělitel (NSD,gcd)
++ NSD čísel $a$ a $b$ je přirozené číslo, které dělí jak $a$ tak $b$ a je z takových čísel největší.
++ hledání NSD???
++ $9\,371\,306 \gcd 10\,040\,685 = ?$
+** nejmenší Společný Násobek (nSN, lcm)
++ nSN čísel $a$ a $b$ je přirozené číslo, které  je dělítelné jak $a$ tak $b$ a je z takových čísel nejmenší.
++ hledání nSN???
++ $9\,371\,306 \lcm 10\,040\,685 = ?$
++ $\frac{1}{9\,371\,306}+\frac{1}{10\,040\,685}$
++ $\frac{4\,685\,653}{9\,371\,306}+\frac{3\,346\,895}{10\,040\,685}$
+* Modulární aritmetika
+** Modulární kongruence
+$a ≅ b\quad (mod\ m);\ a\cong_{m} b$
++ $a\cong_{m} b$ právě tehdy, když  $m|(a-b)$
++ $a=b+m\cdot z;\ z\in\mathbb{Z}$
++ $a \mod m = b \mod m$
++ pokud $a \cong_{m} b$ a $c\cong_{m} d$ pak
+  - $a+c \cong_{m} b+d$
+  - $a\cdot c\cong_{m} b\cdot d$
++ $a+b \cong_{m} (a \mod m) + (b \mod m)$
++ $a\cdot b \cong_{m} (a \mod m) \cdot (b \mod m)$
+** Počítání se zbytkovými třídami
+$\mathbb{Z}_{m}=\{0_{m},1_{m}, \dots, (m-2)_{m}, (m-1)_{m}\}$
++ Třídy kongruence: $a_m = \{\dots, a-2m,a-m,a,a+m,a+2m,\dots \}$, kde $0\le a < m$,
+  - $a$ je reprezentant třídy $a_{m}$
+  - $z\in a_{m}$ právě tehdy, když $z \cong_{m} a$, resp. $z \mod m = a$
++ $a_{m} +_{m} b_{m} = (a+b \mod m)_{m}$
++ $a_{m} \cdot_{m} b_{m} = (a+b \mod m)_{m}$
+** Inverze se zbytkových třídách
++ $-a_{m}=(m-a)_{m}$
++ $a_{m}^{-1}= ???$
+  - $a_{m}^{-1}\cdot a_{m}=1_{m}$
++ $\mathbb{Z}_{5}$,
+  - $1_{m}^{-1}=1_{m}$,
+  - $2_{m}^{-1}=3_{m}$
+  - $3_{m}^{-1}=???$
+  - $4_{m}^{-1}= 4_{m}$, pozn. $4_{m}=(-1 \mod m)_{m}$
+  - $0_{m}^{-1}=???$
