@@ -1,0 +1,152 @@
+#+TITLE: Polynomy
+#+language: cz
+#+latex_class_options: [bigger]
+#+beamer_theme: Bergen
+#+beamer_color_theme: crane
+#+BEAMER_FRAME_LEVEL: 2
+#+latex_header_extra: \usepackage[czech]{babel}
+#+options: h:2
+
+* Polynomy
+** Polynom nad oborem integrity
+*** Polynom
+- $p=p(x)=a_0  + a_{1} x + a_{2} x^{2} + \dots + a_{n} x^{n}\in \mathbb{I}[x]$
+- koeficienty $a_{0},\dots, a_{n}\in \mathbb{I}$,
+- $a_{n}\neq 0$
+- $st(p)=n$
+*** Příklady
+- $p_1=2x^{2}+x+1$
+- $p_2=x+1$
+- $p_3=1$
+- $p_4=0$
+- $st(p_{i})=?$
+** Obor integrity $\mathbb{I}[x]$
+ \[p=a_{0}+a_{1}x+\dots+a_{n}x^{n},\quad q=b_{0}+b_{1}x+\dots+b_{m}x^{m}\]
+*** Sčítání
+- $p+q= (a_{0}+b_{0})+(a_{1}+b_{1})x+\dots+ (a_{k}+b_{k})x^{k}$
+- $k\le m \max n$
+- $(1+2x-3x^{2}+5x^{3}) + (4+x-5x^{3})=5+3x-3x^{2}$
+*** Nulový
+ \[o=0\]
+*** Opačný
+\[-p=-a_{0}-a_{1}x-\dots-a_{n}x^{n}\]
+** Násobení polynomů
+*** Násobení
+- $p\cdot q = c_{0} +c_{1}x+\dots +c_{l}x^{l}$
+- $c_{0}=a_{0}\cdot b_{0}$,
+- $c_{1}=a_{1}\cdot b_{0}+a_{0}\cdot b_{1}$,
+- $c_{i}= a_{i}\cdot b_{0}+a_{i-1}\cdot b_{1}+\dots +a_{i-j}\cdot b_{j} +\dots +a_{0}\cdot b_{i}$,
+- $c_{l}= a_{n}\cdot b_{m}$,
+- $l=n+m$
+- $(1+2x+x^{2})\cdot (3-2x)=$
+- $=1\cdot 3+(2\cdot 3 + 1\cdot (-2))x+ (1\cdot 3 + 2\cdot(-2)) x^{2}+1\cdot(-2) x^{3}$
+- $=3+4x-x^{2}-2x^{3}$
+*** Neutrální
+\[i=1\]
+** Dělení polynomů ze zbytkem
+\[p,q\in T[x]\]
+*** Dělení
+- $p=s\cdot q+ r$
+- $r,s\in T(x)$
+- $st(r)< st(q)$
+- $p\div q =s$
+- $p\mod q =r$
+- $\frac{p}{q}=s+\frac{r}{q}$
+
+*** gcd
+    ?
+*** Příklad
++ $(1+2x+x^{2}) : (3-2x)=?$
++ $(3-2x) : (1+2x+x^{2})=?$
+
+** Dosazení do polynomu
+*** Dosazení
+- $p(u)=a_{0}+a_{1}u+a_{2}u^{2}+\cdots +a_{n}u^{n}$,  $u\in \mathbb{I}$
+*** Hornerovo s.
+- $p = \Bigl(\bigl((a_{n} x + a_{n-1})x+a_{n-2}\bigr)x+\cdots+a_{1}\Bigr)x+a_{0}$
+  #+ATTR_latex: :mode math :environment array :align c||c|c|c|c|c
+  |   | a_n     | a_{n-1}             | \cdots | a_1         | a_0         |
+  |---+---------+---------------------+-------+-------------+-------------|
+  | u | a_n     | c_{n-1} u + a_{n-1} | \cdots | c_1 u + a_1 | c_0 u + a_0 |
+  |---+---------+---------------------+-------+-------------+-------------|
+  | = | c_{n-1} | c_{n-2}             | \cdots | c_0         | \mathbf{d}  |
+- $p(u)=d$
+- $p=(x-u)\cdot (c_{0}+c_{1}x+\cdots+c_{n-1}x^{n-1})+d$
++ $p=x^{4}-2x^{3}+3x^{2}-4x-\frac{1}{6}$, $p\in \mathbb{Q}[x]$
++ $p(\frac{3}{2})=?$
+** Kořeny polynomu
+*** Kořen
+- $p(u)=0$
+- $p=(x-u)\cdot q_{1}$
+- $p=(x-u)^{k}\cdot q_{2}$ \(k\)-násobný kořen
+- $q=x^{4}+2 x^{3}-3 x^{2}+2 x-4$, $q\in \mathbb{Z}_5[x]$
++ kořeny $q$?
+
+*** Racionální
+  - \(p\in \mathbb{R}[x]\),
+  - $a_i, l,k \in \mathbb{Z}$
+  - $p(\frac{l}{k})=0\implies l|a_{n}\wedge k|a_{0}$
+
+** polynom 2. stupně
+    - $p\in \mathbb{R}[x]$, popř. \(p\in \mathbb{C}\)
+    - $p=a x^{2}+b x + c=a(x-x_{1})(x-x_{2})$
+*** Kořeny
+    - $x_{1,2}=\frac{-b\pm\sqrt{D}}{2 a}$
+    - $D=b^{2}-4ac$
+*** Na čtverec
+    - $p=a\cdot (x-k)^{2}+l$
+    - $k=-\frac{b}{2a}$
+    - $l=c-a\cdot k^{2}$
+* Posloupnosti
+** Posloupnost
+*** Definice
+   - $\mathsf{a}\colon \math{N}_{0}\to M$, popř. z \mathbb{N}
+   - $(a_0,a_1,a_2,\dots, a_{i},\dost)$
+   - polynom lze chápat jako posloupnost, jak?
+*** Zadání
+   - \(i\)-tým členem :: $a_{i}=\frac{i}{i+1}$
+   - rekuretně :: $a_{0}=0,\ a_{1}=1,\ a_{i+1}=a_{i}+a_{i-1}$, pro $i\in \mathbb{N}$
+   - výčtem :: neúplným $(1,2,4,8,\dots)$
+
+** Ohraničenost
+   - $p\colon \mathbb{N}_{0} \to S$
+   - $S$ je uspořádaná množina
+*** ohraničená
+**** zdola
+     - $\exist l \in S,\,\forall i\in \mathbb{N}_{0};\ l\le a_{i}$
+     - $l$ dolní závora
+
+**** shora
+     - $\exist u \in S,\,\forall i\in \mathbb{N}_{0};\ u\ge a_{i}$
+     - $g$ horní závora
+**** ohraničená
+     - zdola i shora
+     - podobně u množin
+
+** monotonnost
+   - $p\colon \mathbb{N}_{0} \to S$
+   - $S$ je uspořádaná množina
+*** Rostoucí
+     $i\le j\implies a_{i}\le a_{j}$
+**** Ostře
+     $i< j\implies a_{i}< a_{j}$
+
+*** Klesající
+     $i\le j\implies a_{i}\ge a_{j}$
+**** Ostře
+     $i< j\implies a_{i}> a_{j}$
+*** Zobrazení
+    lze zavést i pro zobrazení uspořádaných množin
+
+** Aritmetická posloupnost
+   - $a_{i}-a_{i-1}=d$ pro $i\in \mathbb{N}$
+   - $a_{i}=a_{i-1}+d=a_{0}+i\cdot d$
+*** Součet
+    - $s(\mathsf{a})_n=\sum_{i=0}^{n-1} a_{i} =\frac{n\cdot(a_{0}+a_{n-1})}{2}$
+
+** Geometrická posloupnost
+   - $\frac{b_{i}}{b_{i-1}}=q$
+   - $b_{i}=b_{i-1}\cdot q= b_{0}\cdot q^{i}$
+*** Součet
+    - $s(\mathsf{b})_{n}=\sum_{i=0}^{n-1} b_{i} = b_{0}\frac{1-q^n}{1-q}$
+    - $s(\mathsf{b})_{\infty}=\sum_{i\in N_{0}} b_{i} = b_{0}\frac{1}{1-q}$ pro $-1<q<1$
