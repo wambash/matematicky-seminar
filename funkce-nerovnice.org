@@ -1,0 +1,110 @@
+#+TITLE: Funkce Nerovnice
+#+language: cz
+#+latex_class_options: [bigger]
+#+beamer_theme: Bergen
+#+beamer_color_theme: crane
+#+BEAMER_FRAME_LEVEL: 2
+# +latex_header: \usepackage{svg}
+#+latex_header_extra: \usepackage[czech]{babel}
+#+options: h:2
+* Funkce
+** Funkce jedné reálné proměnné
+*** Definice
+\(f\colon A \to \mathbb{R};\ A\subseteq \mathbb{R} \)
+*** Obor
+**** definiční
+$D_{f}=A$
+**** hodnot
+$H_{f}=f(A)=\{b\in \mathbb{R}; \exist a\in A;\ f(a)=b \}$
+*** Parita
+**** sudá
+$f(-x)=f(x)$
+- graf souměrný podle osy $y$
+**** lichá
+$f(-x)=-f(x)$
+- graf středově souměrný podle počátku $(0,0)$
+*** Periodická
+$f(x+a)=f(x),\ a\in \mathbb{R}$
+
+** Monotonnost
+*** Rostoucí
+$x\le y \implies f(x)\le f(y)$
+**** ostře
+$x < y \implies f(x) < f(y)$
+*** Klesající
+$x\le y \implies f(x)\ge f(y)$
+**** ostře
+$x < y \implies f(x) > f(y)$
+
+** Příklady elementárních funkcí
+| Jméno         |    $f(x)$     |          $D_{f}$           |               $H_{f}$               |
+|---------------+---------------+----------------------------+-------------------------------------|
+|               |      <c>      |            <c>             |                 <c>                 |
+| Konstantní    |      $0$      |        $\mathbb{R}$        |               $\{a\}$               |
+| Lineární      |      $x$      |        $\mathbb{R}$        |            $\mathbb{R}$             |
+| Lomená        | $\frac{1}{x}$ | $\mathbb{R}\setminus\{0\}$ |     $\mathbb{R}\setminus\{0\}$      |
+| Kvadratická   |    $x^{2}$    |        $\mathbb{R}$        |         $\langle 0,\infty)$         |
+| Exponenciální |    $e^{x}$    |        $\mathbb{R}$        |            $( 0,\infty)$            |
+| Logaritmická  |   $\ln(x)$    |        $(0,\infty)$        |            $\mathbb{R}$             |
+| Goniometrické |   $\sin(x)$   |        $\mathbb{R}$        |        $\langle -1,1\rangle$        |
+| Goniometrické |   $\cot(x)$   |       $?\cup(0,\pi)$       |        $\langle -1,1\rangle$        |
+| Cyklometrické | $\arccos(x)$  |  $\langle -1, 1 \rangle$   |       $\langle 0, \pi\rangle$       |
+| Cyklometrické | $\arctan(x)$  |        $\mathbb{R}$        | $( -\frac{\pi}{2}, \frac{\pi}{2} )$ |
+** Změna grafu funkce
+\[f(x+a),\quad  f(x)+b,\]
+\[-f(x),\quad f(-x),\quad -f(-x)\]
+\[f(a\cdot x),\quad  a\cdot f(x)\]
+\[f(|x|),\quad |f(x)|,\quad |f(|x|)|\]
++ $f^{-1}(x)$ inverzní funkce
+
+* Rovnice
+** Rovnice
+*** Lineární
+$ax+b=0 \implies  x=\frac{-b}{a}$
+
+*** Kvadratická
+$a x^{2}+b x +c =0 \implies a(x-x_{0})(x-x_{1})=0$
+
+*** Exponenciální
+$e^{x}=y \iff x=\ln(y)$
++ $e^{x}=e^{y} \iff x=y$
++ $a^{x}=e^{x \ln(a)}$
+
+*** Logaritmická
+$\ln(y)=ln(x) \iff x=y$
++ $\ln(x)+\ln(y)=\ln(x y),\ \ln(x)-\ln(y)=\ln(\frac{x}{y})$
++ $a\ln(x)=\ln(x^{a})$
++ $\log_{a}(x)=\frac{\ln(x)}{\ln(a)}$
++ $\ln(e^{x})=x=e^{\ln(x)}$
+*** Goniometrické
+$\sin(x)=0 \iff x\in \{k\pi,\ k\in\mathbb{Z}\}$
+
+* Nerovnice
+** Nerovnice
++ $x\le y \iff x+a \le y+a$
++ $x\le y \iff a x \le a y\iff b y \le b x$, pro $a > 0 > b$
++ $x\cdot y \ge 0 \iff (x\ge 0\,\wedge\, y\ge 0)\vee(x\le 0\, \wedge\,y\le 0)$
++ $\frac{x}{y} \ge 0 \iff (x\ge 0\,\wedge\, y> 0)\vee(x\le 0\, \wedge\,y< 0)$
++ $x\le y \iff e^{x} \le e^{y}\iff \ln(x)\le \ln(y)$
++ $x\le y \implies f(x)\le f(y)$  pro $f$ rostoucí
++ $x\le y \implies g(y) \le g(x)$ pro $g$ klesající, ($\arccos, arccot, a^{x}$, kde $0<a<1$)
++ $|x|+|2-x|-|x+1|\ge 2 \iff x\in ?$
+* Diskrétní logaritmus
+** Diskrétní logaritmus
+*** Logaritmus
++ $G$ je (cyklická grupa) např. $(\mathbb{Z}_{p},\cdot)$
++ $g\in G$
++ $g^{a}=h$
++ $\log_{g}(h)=a$ jak zjistit?
+*** Příklad
++ $521^{31} \mod 1583 = 721$
++ $\log_{521}(721)=?$
+** DHKE
++ veřejné $g=521\in \mathbb{Z}$, $(\mathbb{Z}_{1583},\cdot)$
++ tajné u Alice $a=31$
++ tajné u Boba  $b=273$
++ Alice Bobovi  $g^{a}=521^{31} = 729$
++ Bob Alici  $g^{b}=521^{273} = 711$
++ Alice spočítá $(g^{b})^{a}=711^{31}=521^{273+31}=803$
++ Bob spočítá $(g^{a})^{b}=729^{273}=521^{31+273}=803$
++ Jen Bob a Alice zná $803$
