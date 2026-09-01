@@ -18,7 +18,7 @@
 + $|X \times Y|=?$
   * $|A\times B|=?$
   * $|A^{2}|=?$
-** Prázná množina
+** Prázdná množina
 + $\emptyset=\{\}$
 + $|\emptyset|=?$
 + $2^{\emptyset}=?$
@@ -30,7 +30,7 @@
 ***  Inverzní relace
 \[\sim^{-1} \subseteq B \times A\]
 \[b \sim^{-1} a \iff a\sim b\]
-*** Skládaní
+*** Skládání
 \[R \subseteq A \times B,\ S\subseteq B \times C\]
 \[a(R\circ S)c \iff \exists b\in B;\ aRb \wedge bSc \]
 
@@ -113,7 +113,7 @@ viz [[https://cs.wikipedia.org/wiki/Hasse%C5%AFv_diagram][WP]]
 #+ATTR_latex: :mode math :environment pmatrix :align ccccc :math-prefix q=
 | 1 | 2 | 3 | 4 | 5 |
 | 3 | 5 | 2 | 1 | 4 |
-*** Skládaní
+*** Skládání
 #+ATTR_latex: :mode math :environment pmatrix :align ccccc :math-prefix p\circ q= :math-suffix ,\ q\circ p=?
 | 1 | 2 | 3 | 4 | 5 |
 | 5 | 1 | 2 | 4 | 3 |
@@ -206,7 +206,7 @@ grupoidu $(G;*)$
 + $H\subseteq G$
 + $x,y\in H \implies x * y \in H$
 + $H$ nosná množina
-+ $(\mathbb{C}, \cdot)$, množina $\{a+bi\in \mathb{C}; |a+bi|=1\}$, tj. $\sqrt{a^{2}+b^{2}}=1$
++ $(\mathbb{C}, \cdot)$, množina $\{a+bi\in \mathbb{C}; |a+bi|=1\}$, tj. $\sqrt{a^{2}+b^{2}}=1$
 
 *** Podokruh
 $(H,+,\cdot)$ okruhu $(G;+,\cdot)$
@@ -214,7 +214,7 @@ $(H,+,\cdot)$ okruhu $(G;+,\cdot)$
 + $x,y\in H \implies x + y, x\cdot y \in H$
 + $x \in H \implies -x \in H$, (aby byl $(H;+,\cdot)$ okruh)
 + $(\mathbb{Z};+,\cdot)$, sudá čísla $\mathbb{S}$
-** Homomrfismus
+** Homomorfismus
 *** grup
 + Homomorfismus $f$ z grupy $(G; *)$ do grupy $(H;\odot)$
 1. $f\colon G \to H$

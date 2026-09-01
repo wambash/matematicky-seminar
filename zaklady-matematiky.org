@@ -290,7 +290,7 @@ $\mu_M(x) \colon \mathcal{U} \to \langle 0,1\rangle$ (Označení $M(x) := \mu_{m
 ***  Inverzní relace
 \[\sim^{-1} \subseteq B \times A\]
 \[b \sim^{-1} a \iff a\sim b\]
-*** Skládaní
+*** Skládání
 \[R \subseteq A \times B,\ S\subseteq B \times C\]
 \[a(R\circ S)c \iff \exists b\in B;\ aRb \wedge bSc \]
 *** Zakreslení relace
@@ -365,7 +365,7 @@ viz [[https://cs.wikipedia.org/wiki/Hasse%C5%AFv_diagram][WP]]
 #+ATTR_latex: :mode math :environment pmatrix :align ccccc :math-prefix q=
 | 1 | 2 | 3 | 4 | 5 |
 | 3 | 5 | 2 | 1 | 4 |
-*** Skládaní
+*** Skládání
 #+ATTR_latex: :mode math :environment pmatrix :align ccccc :math-prefix p\circ q= :math-suffix ,\ q\circ p=?
 | 1 | 2 | 3 | 4 | 5 |
 | 5 | 1 | 2 | 4 | 3 |
