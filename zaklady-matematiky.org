@@ -1,10 +1,62 @@
 #+TITLE: Základy Matematiky
 #+language: cz
-#+latex_class_options: [bigger]
+# +latex_class_options: [aspectratio=1610,bigger]
 #+latex_header: \usetheme{Rochester}
 #+latex_header: \usecolortheme{crane}
 #+latex_header_extra: \usepackage[czech]{babel}
+#+BEAMER_FRAME_LEVEL: 2
 #+options: h:2
+* Matematický text
+** Nedostatky /běžného/ jazyka
+*** nepřehlednost, upovídanost
++ Druhá mocnina součtu libovolných dvou reálných čísel je rovna součtu druhé mocniny prvního čísla, dvojnásobku součinu obou čísel a druhé mocniny druhého čísla.
++ $\forall a,b \in \mathbb{R}; (a+b)^{2} = a^{2}+2\,ab + b^{2}$
+*** vágnost, nepřesnost
++ Nejmenší přirozené číslo takové, že nelze vyjádřit méně jak dvaceti slovy.
++ Množina všech množin, neobsahujících sama sebe.
+  + Seznam všech seznamů, které samy sebe neobsahují,
+  + [[wikipedia:cs:Russellův_paradox][Russelův paradox]]
+** Symbolický zápis
+*** Synboly užívané v matematice
+- $1,2, x,y, \alpha, \beta,\dots$
+- $+,-,\cdot,\ =,<,\neq,(,),\dots$
+- $\neg,\vee,\wedge,\imply,\iff,\dots$
+- $\cup,\cap, \setminus, \subseteq,\dots$
+- $\odot, \rightsquigarrow, \gg, \Box, \dots$
+*** Zápis pomocí symbolů
+- $(5+1) = (1+2)+3$
+- $)*x \gg 1\odot$
+** Axiomatická výstavba matematiky
+*** Axiom
++ nezpochybnitelný fakt
+- K dané přímce a bodu, který na ní neleží, lze sestrojit právě jednu rovnoběžku
+*** Matematická teorie (model)
++ vybudovaná pomocí sady axiomů
++ chtěli bychom, aby byla
+  + bezesporná
+  + nezávislá
+  + úplná
++ [[wikipedia:cs:Gödelovy_věty_o_neúplnosti][Gödelovy věty o neúplnosti]]
+
+** Matematický text
+*** Definice
++ zavádí pojmy často pomocí axiomů
++ nelze definovat vše (prvek, bod, \dots)
+*** Věta
++ tvrzení o definovaných pojmech
+*** Důkaz
++ uvedené věty jsou dokázaný, pomocí logiky, teorie množin a dříve dokázaných vět
+** Slavné matematické modely
+*** Eukleidovská geometrie
++ (Euklidovy) [[wikipedia:cs:Eukleidovy_Základy][Základy]]
++ cca 300 př. n. l.
+*** Peanova aritmetika
++ nula je (přirozené) číslo
++ následník čísla je číslo
++ nula není následníkem žádného čísla
++ různá přirozená čísla mají různé následovníky
++ platí matematická indukce
+
 * Logika
 ** Výroková logika
 *** Výrok
@@ -16,18 +68,39 @@ tvrzení (oznamovací věta) o kterém má smysl uvažovat, zda je nebo není pr
   - Kolikátého je?
   - Ahoj.
   - $x\ge7$
+** Jazyk výrokové logiky
+*** Abeceda výrokové logiky
++ proměnné :: $x,y,z,\dots$
++ symbol negace ::  $\neg$
++ symbol implikace :: $\implies$
+*** Výroková formule
+1. proměnné (atomická VF)
+2. $\neg A$, kde $A$ je VF)
+3. $A\Rightarrow B$, kde $A,B$ jsou VF, (popř. $(A\implies B)$)
+4. VF vznikne pouze (konečným) opakováním kroků 2, 3.
+** Axiomatizace výrokové logiky
+*** Axiomy
++ $A \implies (B\implies A)$
++ $\bigl(A \Rightarrow (B\implies C)\bigr) \implies \bigl((A\Rightarrow B)\implies (A\Rightarrow C)\bigr)$
++ $(\neg A \implies \neg B) \implies (B\implies A)$
+*** Odvozovací pravidlo
++ Modus ponens :: Platí-li $A$ a i $A\Rightarrow B$ platí, pak také platí $B$.
+** Logické spojky
++ negace $\neg$ :: není pravda, že
++ implikace $\Rightarrow$ :: jestliže, pak
++ disjunkce  $\vee$ :: nebo
+  - $(A \Rightarrow B) \Rightarrow B$
++ konjunkce $\wedge$ :: a (zároveň)
+  - $\neg (\neg A \vee \neg B)$
++ ekvivalence $\Leftrightarrow$ :: tehdy a jen tehdy, když
+  - $(A\Rightarrow B) \wedge (B\Rightarrow A)$
++ xor $\oplus$ :: platí právě (a jen) jedna z možností
+  - $\neg (A\iff B)$
 ** Ohodnocení výroku
 *** Pravdivý výrok
 \[1\]
 *** Nepravdivý výrok
 \[0\]
-** Složený výrok
-+ negace $\neg$ :: není pravda,
-+ konjunkce $\wedge$ :: a (zároveň)
-+ disjunkce  $\vee$ :: nebo
-+ xor $\oplus$ :: platí právě (a jen) jedna z možností
-+ implikace $\Rightarrow$ :: jestliže, pak
-+ ekvivalence $\Leftrightarrow$ :: tehdy a jen tehdy, když
 ** Tabulka složených výroků
 #+ATTR_HTML: :rules all
 | A | B | $\neg A$ | $A \wedge B$ | $A \vee B$ | $A \Rightarrow B$ | $A \Leftrightarrow B$ | $A \oplus B$ |
@@ -37,6 +110,9 @@ tvrzení (oznamovací věta) o kterém má smysl uvažovat, zda je nebo není pr
 | 1 | 0 |    0     |      0       |     1      |         0         |           0           |      1       |
 | 0 | 1 |    1     |      0       |     1      |         1         |           0           |      1       |
 | 1 | 1 |    0     |      1       |     1      |         1         |           1           |      0       |
+
+
+\[ (A \Rightarrow (B \vee C)) \Leftrightarrow ((\neg B \Rightarrow \neg A)\wedge \neg (A \wedge \neg C)) \]
 ** Tautologie
  + vždy pravdivé tvrzení
 
@@ -62,8 +138,6 @@ tvrzení (oznamovací věta) o kterém má smysl uvažovat, zda je nebo není pr
 + $\neg (A\wedge B)\iff \neg A\vee \neg B$
 + $\neg (A\Rightarrow B) \iff A\wedge \neg B$
 + $\neg (A\Leftrightarrow B) \iff (\neg A \Leftrightarrow B)$
-** Odvozovací pravidla
-+ Modus ponens :: platí-li $A$ a také $A\Rightarrow B$ pak platí $B$
 ** Predikátová logika
 + Existuje ::
   * $\exists x;  V(x)$
@@ -97,6 +171,12 @@ $A\Rightarrow B$
   1. Dokážeme $V(0)$.
   2. Dokážeme, $V(i-1)\Rightarrow V(i)\quad \forall i\in \mathbb{N}$.
   3. Dohromady dostáváme: $V(n),\quad \forall n\in \mathbb{N}_{0}$.
+
+** Věty
++ Věta :: $A\implies B$
++ Obměněná :: $\neg B \implies \neg A$
++ Obracenná :: $B\implies A$
++ Negace :: $\neg (A\implies B)$, ($A\wedge \neg B$)
 * Teorie množin
 ** Definování množin
 *** Výčtem prvků
@@ -134,7 +214,7 @@ $A\Rightarrow B$
 | Doplněk    | $A'=\mathcal{U}\setminus A$ | $= \{x; x\notin A\}$                        |
 ** Množinové rovnosti
 + $A\cup A=A$; $A\cap A=A$
-+ $A\cup B=A\cup B$; $A\cap B=B\cap A$
++ $A\cup B=B\cup A$; $A\cap B=B\cap A$
 + $A\cup (B\cup C)=(A\cup B) \cup  C=A\cup B\cup C$
 + $A\cup (A\cap B)=A$; $A\cap (A\cup B)=A$;
 + $A\cup (B\cap C)=(A\cap B)\cup (A\cap C)$
@@ -143,13 +223,52 @@ $A\Rightarrow B$
 + $A\setminus (B\cup C)=(A\setminus B)\cap (A\setminus C)$
 + $(A\setminus B)\setminus C=(A\setminus C)\setminus B=A\setminus (B\cup C)$
 + $A\setminus (A\setminus B)=?$
-
 ** Potenční množina
 + množina všech podmnožin
 + $2^{X}=\{Y;Y\subseteq X\}$
 + $A=\{a,b,c\}$
   + $2^A=\{\{a\},\{b\},\{a,c\},\dots\}$
   + $|2^{A}|=?$
+* Fuzzy množina
+** Funkce příslušnosti
+$\mu_M(x) \colon \mathcal{U} \to \langle 0,1\rangle$ (Označení $M(x) := \mu_{m}(x)$ )
+
+  #+ATTR_latex: :mode math :environment cases :math-prefix \mu_M(x)=M(x)=
+  |      0 | x \text{ \emph{vůbec} nepadne do fuzzy množiny }  M   |
+  | \vdots |                                                       |
+  |    0.2 | x \text{ padne \emph{trochu}  do fuzzy množiny } M    |
+  | \vdots |                                                       |
+  |    0.5 | x \text{ padne \emph{tak napůl} do fuzzy množiny }  M |
+  | \vdots |                                                       |
+  |    0.8 | x \text{ padne \emph{hodně}   do fuzzy množiny } M    |
+  | \vdots |                                                       |
+  |      1 | x \text{ \emph{plně} padne  do fuzzy množiny } M      |
+
+** Operace s fuzzy množinami
+*** Doplněk
+\[\neg{M}(x) = 1-M(x)\]
+*** Průnik (t-norm)
++ Minimální :: $(M\cap_{m} N)(x) = M(x) \min N(x)$
++ Łukasiewicz :: $(M\cap_{\text{Ł}} N)(x) = (M(x) + N(x) - 1) \max 0$
++ \alert{Součinová} :: $(M\cap_{\text{s}} N)(x) = M(x) \cdot N(x)$
+
+*** Sjednocení
+ \[M\cup_{i}N= \overline{\overline{M}\cap_{i} \overline{N}}$\]
+
+** Rozdíl fuzzy množin (součinová)
+*** Možnosti definice $M\setminus_{s} N$
++ $(M\cap_{s} \neg{N})(x)= M(x) \cdot (1-N(x))$
++ $(M\cap_{s} \neg(M\cap_{s} N))(x)=M(x)\cdot (1-M(X)\cdot N(X))$
++ Rozdíl FM odvozen z rezidua
+  $1-\frac{N(x)}{M(x)}$
+
+*** Reziduum
+\[x\le y \rightarrow_{i} z \iff x\cap_{i} y\le z\]
+#+ATTR_latex: :mode math :environment cases :math-prefix y \rightarrow_{s} z =
+| \frac{z}{y} | y > z   |
+|           1 | y \le z |
+
+* Relace
 ** Kartézský součin, mocnina
 + $A=\{a,b,c\}$; $B=\{1,2\}$
 + $X \times Y = \{(x,y); x\in X\wedge y\in Y\}$
@@ -164,3 +283,104 @@ $A\Rightarrow B$
 + $|\emptyset|=?$
 + $2^{\emptyset}=?$
 + $|\{\emptyset\}|=?$
+** Relace mezi množinami
+\[\sim\subseteq A\times B\]
+***  Zápis
+\[a \sim b \iff (a,b)\in \sim\]
+***  Inverzní relace
+\[\sim^{-1} \subseteq B \times A\]
+\[b \sim^{-1} a \iff a\sim b\]
+*** Skládaní
+\[R \subseteq A \times B,\ S\subseteq B \times C\]
+\[a(R\circ S)c \iff \exists b\in B;\ aRb \wedge bSc \]
+*** Zakreslení relace
+viz seminář
+** Relace na množině
+\[\sim\subseteq A^{2} \]
+*** Reflexivní
+\[a \sim a; \quad \forall a \in A\]
+*** Symetrická
+\[a \sim b \iff b \sim a \]
+*** Antisymetrická
+\[a \sim b\, \wedge\, b \sim a\implies a=b \]
+*** Tranzitivní
+\[a \sim b\, \wedge\, b \sim c \implies a\sim c \]
+** Relace ekvivalence
++ Reflexivní, Symetrická, Tranzitivní
++ Rozklad množiny podle ekvivalence
++ $\equiv_{5} \subseteq \mathbb{Z}^{2}$
++ $a\equiv_{5} b \iff 5|(a-b)$
++ Rozklad podle $\equiv_{5}$
+  + $[0]_{\equiv_{5}}=\{\dots, -10,-5,0,5,10,\dots\}$
+  + $[1]_{\equiv_{5}}=\{\dots, -9,-4,1,6,11,\dots\}$
+  + $[2]_{\equiv_{5}}=\{\dots, -8,-3,2,7,12,\dots\}$
+  + $[3]_{\equiv_{5}}=\{\dots, -7,-2,3,8,13,\dots\}$
+  + $[4]_{\equiv_{5}}=\{\dots, -6,-1,4,9,14,\dots\}$
+** Relace (částečného) uspořádání
++ Reflexivní, Antisymetrická, Tranzitivní
+*** Uspořádaná množina
+\[(A;\le)\]
+
+*** Největší prvek
+\[\forall a\in A;\ a\le u\]
+
+*** Maximální prvek
+\[\forall a\in A;\ m \le a \implies m=a\]
+*** Hasseův diagram
+viz [[https://cs.wikipedia.org/wiki/Hasse%C5%AFv_diagram][WP]]
+* Zobrazení
+** Relace zobrazení
+\[f\subseteq A \times B\]
+*** Splňuje
+1. \(\forall a\in A\,\forall b,c \in B;\ a f b\wedge a f c \implies b=c \)
+2. \(\forall a\in A\, \exists b\in B;\ a f b\)
+*** Zápis
++ \(f\colon A\to B \iff f\subseteq A \times B\)
++ \(f(a)=b\iff f\colon a\mapsto b \iff afb\)
+** Injekce, Surjekce, Bijekce
+*** Injekce
++ prosté zobrazení
++ $f(a)=f(b) \implies a=b$
+
+*** Surjekce
++ zobrazení na
++ $\forall b\in B\, \exists a\in A;\ f(a)=b$
+*** Bijekce
++ vzájemně jednoznačné zobrazení
++ Injekce i surjekce zároveň
+
+** Mohutnost množiny
++ $|A|$
++ /nahrazuje/ počet prvků u nekonečných množin
++ dvě množiny mají stejnou mohutnost $|A|=|B|$, právě tehdy když je mezi nimi bijekce
++ pokud existuje injekce z množiny $A$ do $B$ (resp. surjekce z $B$ na $A$), pak $|A|\le |B|$
++ $|A| < |2^{A}|$
++ $|\mathbb{N}|=|\mathbb{Z}|=|\mathbb{Q}|<|2^{\mathbb{N}}|=|\mathbb{R}|=|\mathbb{C}|$
+** Permutace
++ bijekce na konečné množině, nejčastěji $\{1,2,\dots,n\}$,
+*** Zápis
+#+ATTR_latex: :mode math :environment pmatrix :align ccccc :math-prefix p= :math-suffix ,\
+| 1 | 2 | 3 | 4 | 5 |
+| 2 | 4 | 3 | 5 | 1 |
+#+ATTR_latex: :mode math :environment pmatrix :align ccccc :math-prefix q=
+| 1 | 2 | 3 | 4 | 5 |
+| 3 | 5 | 2 | 1 | 4 |
+*** Skládaní
+#+ATTR_latex: :mode math :environment pmatrix :align ccccc :math-prefix p\circ q= :math-suffix ,\ q\circ p=?
+| 1 | 2 | 3 | 4 | 5 |
+| 5 | 1 | 2 | 4 | 3 |
+*** Inverzní
+#+ATTR_latex: :mode math :environment pmatrix :align ccccc :math-prefix p^{-1}= :math-suffix ,\ p\circ p^{-1}=?
+| 1 | 2 | 3 | 4 | 5 |
+| 5 | 1 | 3 | 2 | 4 |
+** Binární operace
+*** Definice
+\[ \otimes\colon A\times A \to A \]
+*** Zápis
+\[a \otimes b = c \iff \otimes(a,b)=c\]
+# *** Cayleyho tabulka
+# viz [[https://cs.wikipedia.org/wiki/Cayleyho_tabulka][WP]]
+*** \(n\)-ární operace
+$f\colon A^{n}\to A$ pro $n\in \mathbb{N}_{0}$
+**** nulární operace
+???

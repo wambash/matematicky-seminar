@@ -8,19 +8,21 @@
 #+options: h:2
 
 * Polynomy
-** Polynom nad oborem integrity
+** Polynom nad komutativním okruhem
 *** Polynom
-- $p=p(x)=a_0  + a_{1} x + a_{2} x^{2} + \dots + a_{n} x^{n}\in \mathbb{I}[x]$
-- koeficienty $a_{0},\dots, a_{n}\in \mathbb{I}$,
+- $p\colon \mathbb{N}_{0} \to \mathbb{O}$
+- $p=(a_{0},a_{1},a_{2},\dots,a_{n},0,\dots)$
+- $p(x)=a_0  + a_{1} x + a_{2} x^{2} + \dots + a_{n} x^{n}\in \mathbb{O}[x]$
+- koeficienty $a_{0},\dots, a_{n}\in \mathbb{O}$,
 - $a_{n}\neq 0$
 - $st(p)=n$
-*** Příklady
+** Příklady
 - $p_1=2x^{2}+x+1$
 - $p_2=x+1$
 - $p_3=1$
 - $p_4=0$
 - $st(p_{i})=?$
-** Obor integrity $\mathbb{I}[x]$
+** Okruh polynomů $\mathbb{O}[x]$
  \[p=a_{0}+a_{1}x+\dots+a_{n}x^{n},\quad q=b_{0}+b_{1}x+\dots+b_{m}x^{m}\]
 *** Sčítání
 - $p+q= (a_{0}+b_{0})+(a_{1}+b_{1})x+\dots+ (a_{k}+b_{k})x^{k}$
@@ -42,7 +44,7 @@
 - $=1\cdot 3+(2\cdot 3 + 1\cdot (-2))x+ (1\cdot 3 + 2\cdot(-2)) x^{2}+1\cdot(-2) x^{3}$
 - $=3+4x-x^{2}-2x^{3}$
 *** Neutrální
-\[i=1\]
+\[e=1\]
 ** Dělení polynomů ze zbytkem
 \[p,q\in T[x]\]
 *** Dělení
@@ -59,6 +61,13 @@
 + $(1+2x+x^{2}) : (3-2x)=?$
 + $(3-2x) : (1+2x+x^{2})=?$
 
+** Problém s děliteli nuly
++ $\mathbb{Z}_{12}[x]$
++ $p_{1}=3x+1$
++ $p_{2}=4x+2$
++ $p_{1}\cdot p_{2}=?$
++ $st(p_{1}\cdot p_{2})=?$
++ zpravidla budeme mít polynomy nad obory integrity (číselnými, nebo zbytkových tříd (prvočíselných))
 ** Dosazení do polynomu
 *** Dosazení
 - $p(u)=a_{0}+a_{1}u+a_{2}u^{2}+\cdots +a_{n}u^{n}$,  $u\in \mathbb{I}$
@@ -72,7 +81,7 @@
   | = | c_{n-1} | c_{n-2}             | \cdots | c_0         | \mathbf{d}  |
 - $p(u)=d$
 - $p=(x-u)\cdot (c_{0}+c_{1}x+\cdots+c_{n-1}x^{n-1})+d$
-+ $p=x^{4}-2x^{3}+3x^{2}-4x-\frac{1}{6}$, $p\in \mathbb{Q}[x]$
++ $p=x^{4}-2x^{3}+3x^{2}-4x-\frac{1}{16}$, $p\in \mathbb{Q}[x]$
 + $p(\frac{3}{2})=?$
 ** Kořeny polynomu
 *** Kořen
@@ -85,7 +94,7 @@
 *** Racionální
   - \(p\in \mathbb{R}[x]\),
   - $a_i, l,k \in \mathbb{Z}$
-  - $p(\frac{l}{k})=0\implies l|a_{n}\wedge k|a_{0}$
+  - $p(\frac{l}{k})=0\implies k|a_{n}\wedge l|a_{0}$
 
 ** polynom 2. stupně
     - $p\in \mathbb{R}[x]$, popř. \(p\in \mathbb{C}\)
@@ -97,10 +106,24 @@
     - $p=a\cdot (x-k)^{2}+l$
     - $k=-\frac{b}{2a}$
     - $l=c-a\cdot k^{2}$
+
+** Derivace polynomu
+*** Derivace
++ $p=a_{0}+a_{1}x+a_{2}x^{2}+a_{3}x^{3}+\dots+ a_{n}x^{n}$
++ $p'=1\cdot a_{1}+2\cdot a_{2}x + 3\cdot a_{3} x^{2}+\dots+n\cdot a_{n}x^{n-1}$
+*** Kořeny
+derivace
++ Má-li polynom $p$ kořen $u$ který je \(k\)-násobný. Pak je $u$ i \((k-1)\)-násobným kořenem $p'$.
++ $(x-u)^k|p \implies (x-u)^{k-1}|p'$
+*** Příklad
+ najděte trojnásobný kořen polynomu
+ \[p=11+6x+9x^{2}+16x^{3}+10x^{4}+4x^{5}\in \mathbb{Z}_{19}\]
+
+
 * Posloupnosti
 ** Posloupnost
 *** Definice
-   - $\mathsf{a}\colon \math{N}_{0}\to M$, popř. z \mathbb{N}
+   - $\mathsf{a}\colon \mathbb{N}_{0}\to M$, popř. z \mathbb{N}
    - $(a_0,a_1,a_2,\dots, a_{i},\dost)$
    - polynom lze chápat jako posloupnost, jak?
 *** Zadání

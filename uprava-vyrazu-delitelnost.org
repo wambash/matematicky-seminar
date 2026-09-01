@@ -3,7 +3,9 @@
 # +latex_class: beamer
 #+latex_header:\usepackage[czech]{babel}
 #+latex_header:\usepackage{amsmath}
-#+options: h:3 toc:nil
+#+latex_header: \DeclareMathOperator{\lcm}{lcm}
+# +BEAMER_FRAME_LEVEL: 3
+#+options: h:2 toc:nil
 
 * Čísla
 - Přirozená čísla :: $\mathbb{N}=\{1,2,\dots\}$; $\mathbb{N}_{0}=\{0,1,2,\dots\}$

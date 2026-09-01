@@ -1,0 +1,120 @@
+#+TITLE: Vektorový Prostor
+
+#+language: cz
+# +latex_class_options: [bigger]
+#+latex_class_options: [bigger,aspectratio=169]
+#+beamer_theme: Bergen
+#+beamer_color_theme: crane
+#+BEAMER_FRAME_LEVEL: 2
+#+latex_header: \usepackage{bm}
+#+latex_header: \usepackage{mathtools}
+#+latex_header_extra: \usepackage[czech]{babel}
+#+options: h:2
+
+* Vektorový prostor
+** Vektorový prostor (modul)
+\[(V,+,\mathcal{T},\cdot)\]
+- $(V,+)$ je Abelovská grupa
+- $\mathcal{T}$ je těleso
+- $\cdot\colon T\times V \to V$
+- platí:
+  1. $a\cdot(\bm{u}+\bm{v})= a\cdot\bm{u}+a\cdot\bm{v}$
+  2. $(a+b)\cdot\bm{u}= a\cdot\bm{u}+b\cdot\bm{u}$
+  3. $a\cdot(b\cdot\bm{u})=(a\cdot b)\cdot\bm{u}$
+  4. $1\cdot \bm{u}=\bm{u}$
+  5. ($0\cdot \bm{u}=\bm{o}$, $a\cdot\bm{o}=\bm{o}$)
+*** Vektory
+$\bm{u},\bm{v},\bm{o}\in V$
+*** Skaláry
+$a,b,0,1\in T$
+
+** Příklady
+- $(\mathcal{T}^{n},+,\mathcal{T},\cdot)$
+  - $(\mathbb{R}^{n},+,\mathbb{R},\cdot)$
+  - $(\mathbb{Z}_{p}^{n},+,\mathbb{Z}_{p},\cdot)$
+- $(\mathbb{R}^{n},+,\mathbb{Q},\cdot)$
+- $(M(\mathcal{T})_{n x m},+,\mathcal{T},\cdot)$
+- $(\mathcal{T}[x],+,\mathcal{T},\cdot)$
+** Lineární kombinace
+    \[a_{1}\bm{u}_{1}+a_{2}\bm{u}_{2}+\cdots+ a_{n}\bm{u}_{n}\]
+*** Závislost
+(lineární)
+**** Nezávislé
+    $a_{1} \bm{u}_{1}+a_{2} \bm{u}_{2}+ \dots + a_{n}\bm{u}_{n}=\bm{o}\implies a_{1}=\dots=a_{n}=0$
+**** Závislé
+    jinak
+** Vektorový podprostor
+\[(U,\oplus,\mathcal{T},\odot) \le\le (V,+,\mathcal{T},\cdot) \]
+- $U\subseteq V$
+- $\bm{u}_{1}\oplus \bm{u}_{2} = \bm{u}_{1} + \bm{u}_{2}$ pro všechna $\bm{u}_{1},\bm{u}_{2}\in U$
+- $a\odot \bm{u} = a \cdot \bm{u}$ pro všechna $a\in T;\bm{u}\in U$
+*** Vlastnosti
+$U$
++ $\bm{o}\in U$
++ $\bm{u}_{1},\dots,\bm{u}_{n}\in U \implies a_{1}\bm{u}_{1}+\cdots+a_{n}\bm{u}_{n}\in U$
+
+**  Báze
+*** Lineární obal
+$\langle \bm{u}_{1},\bm{u}_{2},\dots,\bm{u}_{n}\rangle=\{a_{1}\bm{u}_{1}+\cdots+a_{n}\bm{u}_{n}, a_{i}\in T\}$
+*** Množina generátorů
+$M$ vektorového prostoru $U$
+\[\langle M \rangle = U\]
+*** Báze
+$V$
++ lineárně nezávislá množina generátorů.
++ standardní báze $\mathbb{R}^{3}$: $(1,0,0)$, $(0,1,0)$, $(0,0,1)$
+*** Dimenze
+$\V$
++ počet prvků báze
++ $\dim V=n$
+
+** Operace nad podprostory
+*** Průnik
+$U\cap V$
+*** Součet (spojení)
+ $U+V=\langle U,V\rangle$
+*** Příklady
+určete $U+V$ a $U\cap V$, kde
++ $U=\langle (1,2,1,-1),(1,-1,0,1)\rangle$,
++ $V=\langle (0,2,1,1),(1,1,1,0)\rangle$.
+
+* Eukleidovský vektorový prostor
+** Skalární součin
+ \[\cdot\colon V\times V \to \mathbb{R}\]
+ + $\bm{u}\cdot \bm{v}=\bm{v}\cdot\bm{u}$
+ + $(a\cdot \bm{u})\cdot \bm{v}=a\cdot(\bm{u}\cdot\bm{v})$
+ + $(\bm{u}+\bm{v})\cdot \bm{w}=\bm{u}\cdot\bm{w}+\bm{v}\cdot\bm{w}$
+ + $\bm{u}\cdot \bm{u}\ge 0$
+ + $\bm{u}\cdot \bm{u}=0 \iff \bm{u}=\bm{o}$
+*** Standardní
+$\bm{u}\cdot\bm{v}=u_1 v_{1}+u_{2}v_{2}+\cdots+u_{n}v_{n}$
+** Velikost, úhel
+*** Velikost
+vektoru
+$\|\bm{u}\|=\sqrt{\bm{u}\cdot\bm{u}}$
+*** Úhel
+ dvou vektorů \[ \cos\theta = \frac{\bm{a} \cdot \bm{b}}{\|\bm{a} \|\cdot \|\bm{b} \|} \]
+*** Kolmost
+$\bm{u}\perp\bm{v}\iff \bm{u}\cdot\bm{v}=0$
+** Ortonormální báze
++ báze vektorů velikosti jedna, vzájemně kolmých
++ $\{\bm{u}_1,\bm{u}_2,\dots,\bm{u}_n\}$
++ $\bm{u}_{i}\cdot \bm{u}_{j}=0$ pro $i\neq j$ (ortogonální)
++ $\bm{u}_{i}\cdot \bm{u}_{i}=1$
+*** Ortogonalizace
++ Gram–Schmidtův ortogonalizační proces
++ $\{\bm{u}_1,\bm{u}_2,\dots,\bm{u}_n\}$
++ $\bm{v}_{1}=\bm{u}_{1}$
++ $\bm{v}_{2}=\bm{u}_{2}+c \bm{v}_{1}$;  $\bm{v}_{2}\perp \bm{v}_{1}$
++ $\bm{v}_{3}=\bm{u}_{2}+c_{1}\bm{v}_{1}+c_{2}\bm{v}_{2}$;  $\bm{v}_{3}\perp \bm{v}_{1}$, $\bm{v}_{3}\perp \bm{v}_{2}$
++ $\vdots$
+*** Normalizace
+ $\bm{w}_i=\frac{1}{\|\bm{v}_{i}\|} \bm{v}_{i}$
+
+** Příklad
+Najděte ortonormální bázi podprostoru
++ $W=\langle (1,-2,2,0), (1,-2,2,3), (-1,1,0,0)\rangle$
+** Ortogonální doplněk
++ $U\le\le V$
++ $U= \langle\bm{u}_{1},\bm{u}_{2},\dots,\bm{u}_{n}\rangle$
++ $U^{\perp}=\{\bm{v}\in V; \bm{v}\perp \bm{u}_{1}, \dots ,\bm{v}\perp \bm{u}_{n} \}$

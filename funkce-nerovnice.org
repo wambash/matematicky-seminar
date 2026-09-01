@@ -8,9 +8,10 @@
 #+latex_header_extra: \usepackage[czech]{babel}
 #+options: h:2
 * Funkce
-** Funkce jedné reálné proměnné
+** Funkce jedné (dvou) reálné proměnné
 *** Definice
-\(f\colon A \to \mathbb{R};\ A\subseteq \mathbb{R} \)
+\(f\colon A \to \mathbb{R};\ A\subseteq \mathbb{R},
+\quad (f\colon A \to \mathbb{R};\ A\subseteq \mathbb{R}^{2} \))
 *** Obor
 **** definiční
 $D_{f}=A$
@@ -40,7 +41,7 @@ $x < y \implies f(x) > f(y)$
 | Jméno         |    $f(x)$     |          $D_{f}$           |               $H_{f}$               |
 |---------------+---------------+----------------------------+-------------------------------------|
 |               |      <c>      |            <c>             |                 <c>                 |
-| Konstantní    |      $0$      |        $\mathbb{R}$        |               $\{a\}$               |
+| Konstantní    |      $a$      |        $\mathbb{R}$        |               $\{a\}$               |
 | Lineární      |      $x$      |        $\mathbb{R}$        |            $\mathbb{R}$             |
 | Lomená        | $\frac{1}{x}$ | $\mathbb{R}\setminus\{0\}$ |     $\mathbb{R}\setminus\{0\}$      |
 | Kvadratická   |    $x^{2}$    |        $\mathbb{R}$        |         $\langle 0,\infty)$         |

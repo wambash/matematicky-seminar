@@ -1,0 +1,81 @@
+#+TITLE: Afinní Prostor
+
+#+language: cz
+#+latex_class_options: [bigger]
+#+beamer_theme: Bergen
+#+beamer_color_theme: crane
+#+BEAMER_FRAME_LEVEL: 2
+#+latex_header: \usepackage{bm}
+#+latex_header: \usepackage{mathtools}
+#+latex_header_extra: \usepackage[czech]{babel}
+#+options: h:2
+
+* Afinní prostor
+** Afinní prostor
+    \[(M,V,+)\]
+
++ $V$ je vektorový prostor,
++ $+\colon M \times V \to M$
++ $A+\bm{o}=A$ pro $\forall A\in M$
++ $A+(\bm{u}+\bm{v})=(A+\bm{u})+\bm{v}$ pro $\forall A\in M$, $\forall\bm{u},\bm{v}\in V$
++ $\forall A,B\in M,\, \exists! \bm{u}\in V; A+\bm{u}=B$
+*** Vektory
+$\bm{u},\bm{v}\in V$
+*** Body
+$A,B\in M$
+*** Dimenze
+$dim(V)$
+
+** Rozdíl
+$A-B=\bm{u} \iff A+\bm{u}=B$
++ $A+(B-A)=B$
++ $(A+\bm{u})-(B+\bm{v})= (A-B)+(\bm{u}-\bm{v})$
++ $(A-B)+(C-D)=(A-D)+(C-B)$
++ $(A-B)+(B-C)=A-C$
+
+** Afinní podprostor
+\[(N,W,\oplus) \subseteq\subseteq (M,V,+)\]
++ $N\subseteq M$
++ $W\subseteq\subseteq V$
++ $A\oplus \bm{u}= A+\bm{u}$ pro $\forall A\in N,\ \bm{u}\in V$
+*** Zápis
+\[A+U=A+\langle\bm{u}_{1},\bm{u}_{2},\dots, \bm{u}_{n}\rangle\]
+*** Přímka
+podprostor dimenze 1
+*** Rovina
+podprostor dimenze 2
+*** Nadrovina
+podprostor dimenze o jedno menší než původní (nad)prostor
+
+** Vzájemná poloha
+*** Průnik
+$A+U\cap B+V= C+(U\cap V)$, kde $C=A+\bm{u}=B+\bm{v}$ pro nějaké $\bm{u}\in U,\bm{v}\in V$
+*** Spojení
+$A+U \vee B+W=A+\langle U, W, B-A \rangle>$
+*** Rovnoběžné
+$U\subseteq\subseteq V$ nebo $V\subseteq\subseteq U$
+*** Různoběžné
+$A+U\cap B+V\neq \emptyset$
+*** Mimoběžné
+ jinak
+** Aritmetický afinní prostor
+  \[(\mathbb{T}^{n},\mathcal{T}^{n},+)\]
+*** Body
+$A=[a_{1},a_{2},\dots,a_{n}]$
+*** Vektory
+$\bm{u}=(u_{1},u_{2},\dots,u_{n})$
+*** Zadání
+podprostoru dimenze $n$
++ $n+1$ body
++ bodem a $n$ vektory (parametricky)
++ rovnicemi
+** Příklad
++ Podprostor $[1,2,3]+\langle (1,-1,1)\in \mathbb{R}^{3}$ zapište rovnicemi.
++ Určete podprostor $\mathbb{R}^{3}$ zadán rovnicí $x+y+z=1$.
++ Určete zda jsou podprostory $[1,2,3]+\langle(1,0,4)\rangle$ a $[3,0,4]+\langle(1,4,3),(2,4,2)\rangle$ (v $\mathbb{Z}^{3}_{5}$) rovnoběžné.
+** Příčka mimoběžek
+Přímka $A+\langle\bm{u}\rangle$ která protíná obě mimoběžky je jejich příčkou ve směru $\bm{u}$.
+*** Příklady
++ $\mathbb{R}^{3}$
++ Určete příčku mimoběžek $[1,2,-1]+\langle(1,-1,1)\rangle$ a $[0,9,-2]+\langle(1,0,0)\rangle$ ve směru $(1,2,0)$.
++ Určete příčku mimoběžek $[3,3,3]+\langle(2,2,1)\rangle$ a $[0,5,-1]+\langle(1,1,1)\rangle$ procházející bodem $[4,5,3]$.

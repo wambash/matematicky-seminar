@@ -1,0 +1,143 @@
+#+TITLE: Čtvercové Matice
+#+language: cz
+#+latex_class_options: [bigger,aspectratio=169]
+#+beamer_theme: Bergen
+#+beamer_color_theme: crane
+#+BEAMER_FRAME_LEVEL: 2
+#+latex_header: \usepackage{bm}
+#+latex_header: \usepackage{mathtools}
+#+latex_header_extra: \usepackage[czech]{babel}
+#+options: h:2
+
+* Čtvercová matice
+
+** Čtvercová Matice
+- $A\colon \{1,\dots, n\}^{2} \to \mathbb{I}$
+- $A \in M_{n}(\mathbb{I}),\ a_{ij}\in \mathbb{I}$
+#+ATTR_LATEX: :mode math :environment pmatrix :math-prefix A= :math-suffix =(a_{ij})_{n}
+| a_{11} | a_{12} | \dots  | a_{1n} |
+| a_{21} | a_{22} | \dots  | a_{2n} |
+| \vdots | \vdots | \ddots | \vdots |
+| a_{n1} | a_{n2} | \dots  | a_{nn} |
+
+** Jednotková matice
+   #+ATTR_latex: :mode math :environment pmatrix :math-prefix I_n=
+   |      1 |      0 |      0 | \cdots |      0 |      0 |
+   |      0 |      1 |      0 | \cdots |      0 |      0 |
+   |      0 |      0 |      1 | \cdots |      0 |      0 |
+   | \vdots | \vdots | \vdots | \ddots | \vdots | \vdots |
+   |      0 |      0 |      0 | \cdots |      1 |      0 |
+   |      0 |      0 |      0 | \cdots |      0 |      1 |
+** Algebry matic
++ $(M(\mathbb{I})_{n}, +,-,O)$ je Abelovská grupa,
++ $(M(\mathbb{I})_{n}, \cdot, I)$ je monoid,
+  - $(M(\mathbb{T})_{n}, \cdot, I)$ existují inverzní prvky?
++ $(M(\mathbb{I})_{n}, +, \cdot)$ je okruh
+  - Existují, zde netriviální dělitele nuly?
+** Inverzní matice
+\[A^{-1}\cdot A=I=A\cdot A^{-1} \]
+** Soustava
+#+ATTR_latex: :mode math :environment pmatrix :math-suffix \cdot
+  | a_{11} | a_{12} | a_{13} |
+  | a_{21} | a_{22} | a_{23} |
+  | a_{31} | a_{32} | a_{33} |
+#+ATTR_latex: :mode math :environment pmatrix :math-suffix =
+  | x_{11} | x_{12} | x_{13} |
+  | x_{21} | x_{22} | x_{23} |
+  | x_{31} | x_{32} | x_{33} |
+#+ATTR_latex: :mode math :environment pmatrix
+  | 1 | 0 | 0 |
+  | 0 | 1 | 0 |
+  | 0 | 0 | 1 |
+
+#+LATEX: \arraycolsep=1.0pt
+#+ATTR_LATEX: :mode math :environment array :align rcrcrcr
+ | a_{11}  x_{11} | + | a_{12}  x_{21} | + | a_{13}  x_{31} | = | 1 |
+ | a_{21}  x_{11} | + | a_{22}  x_{21} | + | a_{23}  x_{31} | = | 0 |
+ | a_{31}  x_{11} | + | a_{32}  x_{21} | + | a_{33}  x_{31} | = | 0 |
+
+#+ATTR_LATEX: :mode math :environment array :align rcrcrcr
+ | a_{11}  x_{12} | + | a_{12}  x_{22} | + | a_{13}  x_{32} | = | 0 |
+ | a_{21}  x_{12} | + | a_{22}  x_{22} | + | a_{23}  x_{32} | = | 1 |
+ | a_{31}  x_{12} | + | a_{32}  x_{22} | + | a_{33}  x_{32} | = | 0 |
+
+#+ATTR_LATEX: :mode math :environment array :align rcrcrcr
+ | a_{11}  x_{13} | + | a_{12}  x_{23} | + | a_{13}  x_{33} | = | 0 |
+ | a_{21}  x_{13} | + | a_{22}  x_{23} | + | a_{23}  x_{33} | = | 0 |
+ | a_{31}  x_{13} | + | a_{32}  x_{23} | + | a_{33}  x_{33} | = | 1 |
+
+** Řešíme pomocí GEM
+#+ATTR_latex: :mode math :environment pmatrix
+  | a_{11} | a_{12} | a_{13} | \vline | 1 | 0 | 0 |
+  | a_{21} | a_{22} | a_{23} | \vline | 0 | 1 | 0 |
+  | a_{31} | a_{32} | a_{33} | \vline | 0 | 0 | 1 |
+
+** Řešíme pomocí Cramerova pravidla
+#+ATTR_latex: :mode math :environment pmatrix :math-prefix \frac{1}{|A|}
+ | \vline  1      | a_{12} | a_{13}  \vline | \vline  0      | a_{12} | a_{13}\vline  | \vline  0      | a_{12} | a_{13}\vline  |
+ | \vline  0      | a_{22} | a_{23}  \vline | \vline  1      | a_{22} | a_{23} \vline | \vline  0      | a_{22} | a_{23} \vline |
+ | \vline  0      | a_{32} | a_{33}  \vline | \vline  0      | a_{32} | a_{33} \vline | \vline  1      | a_{32} | a_{33} \vline |
+ |                |        |                |                |        |               |                |        |               |
+ | \vline  a_{11} | 1      | a_{13}  \vline | \vline  a_{11} | 0      | a_{13}\vline  | \vline  a_{11} | 0      | a_{13}\vline  |
+ | \vline  a_{21} | 0      | a_{23}  \vline | \vline  a_{21} | 1      | a_{23} \vline | \vline  a_{21} | 0      | a_{23} \vline |
+ | \vline  a_{31} | 0      | a_{33}  \vline | \vline  a_{31} | 0      | a_{33} \vline | \vline  a_{31} | 1      | a_{33} \vline |
+ |                |        |                |                |        |               |                |        |               |
+ | \vline  a_{11} | a_{12} | 1  \vline      | \vline  a_{11} | a_{12} | 0\vline       | \vline  a_{11} | a_{12} | 0\vline       |
+ | \vline  a_{21} | a_{22} | 0\vline        | \vline  a_{21} | a_{22} | 1\vline       | \vline  a_{21} | a_{22} | 0\vline       |
+ | \vline  a_{31} | a_{32} | 0\vline        | \vline  a_{31} | a_{32} | 0\vline       | \vline  a_{31} | a_{32} | 1\vline       |
+
+** Řešíme pomocí adjungované matice
+#+ATTR_latex: :mode math :environment pmatrix :math-prefix \frac{1}{|A|}
+|           | \vline a_{22} | a_{23}\vline | {\; }_{-} | \vline a_{12} | a_{13}\vline |           | \vline a_{12} | a_{13}\vline |
+|           | \vline a_{32} | a_{33}\vline |           | \vline a_{32} | a_{33}\vline |           | \vline a_{22} | a_{23}\vline |
+|           |               |              |           |               |              |           |               |              |
+| {\; }_{-} | \vline a_{21} | a_{23}\vline |           | \vline a_{11} | a_{13}\vline | {\; }_{-} | \vline a_{11} | a_{13}\vline |
+|           | \vline a_{31} | a_{33}\vline |           | \vline a_{31} | a_{33}\vline |           | \vline a_{21} | a_{23}\vline |
+|           |               |              |           |               |              |           |               |              |
+|           | \vline a_{21} | a_{22}\vline | {\; }_{-} | \vline a_{11} | a_{12}\vline |           | \vline a_{11} | a_{12}\vline |
+|           | \vline a_{31} | a_{32}\vline |           | \vline a_{31} | a_{32}\vline |           | \vline a_{21} | a_{22}\vline |
+
+** Příklad
+*** Najděte
+inverzní matici k
+1.
+  #+ATTR_latex: :mode math :environment pmatrix :math-prefix  A=
+  | 3 | 5 |
+  | 1 | 2 |
+2.
+  #+ATTR_latex: :mode math :environment pmatrix :math-prefix  B=
+  | 1 | 2 |
+  | 3 | 6 |
+
+** Regulární matice
+*** Regulární
+$A\in M_{n}(\mathbb{T})$ je regulární, pokud má
++ všechny řádky (sloupce) lineárně nezávislé
++ $h(A)=n$
++ $|A|\neq 0$
++ $A^{-1}$
+
+*** Grupy
++ $(M^{R}_{n}(\mathbb{T}), \cdot, {}^{-1},I)$ je grupa,
+  + ($M^R$ je množina regulárních matic)
++ $(M^{J}_{n}(\mathbb{I}), \cdot, {}^{-1},I)$ je grupa, (proč?)
+  + ($M^J$ je množina matic s determinantem rovný $1$)
+
+** Maticové rovnice
+1.
+  #+ATTR_latex: :mode math :environment pmatrix :math-suffix  \cdot X\cdot
+  | 3 | 5 |
+  | 1 | 2 |
+  #+ATTR_latex: :mode math :environment pmatrix :math-suffix  =
+  | -2 |  1 |
+  |  1 | -1 |
+  #+ATTR_latex: :mode math :environment pmatrix
+  | 3 | -5 |
+  | 2 | -3 |
+2.
+  #+ATTR_latex: :mode math :environment pmatrix :math-suffix  \cdot X=X\cdot
+  | 3 | 5 |
+  | 1 | 2 |
+  #+ATTR_latex: :mode math :environment pmatrix
+  | 3 | 5 |
+  | 1 | 2 |

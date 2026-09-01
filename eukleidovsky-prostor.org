@@ -1,0 +1,68 @@
+#+TITLE: Eukleidovský Prostor
+
+#+language: cz
+#+latex_class_options: [bigger]
+#+beamer_theme: Bergen
+#+beamer_color_theme: crane
+#+BEAMER_FRAME_LEVEL: 2
+#+latex_header: \usepackage{bm}
+#+latex_header: \usepackage{mathtools}
+#+latex_header_extra: \usepackage[czech]{babel}
+#+options: h:2
+
+* Eukleidovský prostor
+** Eukleidovský prostor
+    \[(M,V,+)\]
++ Afinní prostor
++ $V$ je Eukleidovský vektorový prostor (se skalárním  součinem)
++ pomocí skalárního součinu můžeme definovat vzdálenosti, úhly (kolmost) Eukleidovských podprostorů
+
+** Aritmetický Eukleidovský prostor
+  \[(\mathbb{R}^{n},\mathcal{R}^{n},+)\]
+  + společně se standardním skalárním součinem
+
+** úhel
+*** vektorů
+  + $\angle (\bm{u},\bm{v}) \in (0,\frac{\pi}{2})$
+  + $\cos \angle (\bm{u},\bm{v})=\frac{\bm{u}\bm{v}}{\|u\|\cdot\|v\|}$
+*** podprostorů
+$\angle (A+U,B+V)=\angle(U,V)$,
+****  $U\cap V = \{\bm{o}\}$
+ $= \inf\{\angle(\bm{u},\bm{v}); \bm{u}\in U, \bm{v}\in V\}$ (resp. $\min$),
+****  $U||V \vee V||U$
+$=0$
+**** jinak
+$=\angle(U\cap (U\cap V)^{\perp}, V\cap (U\cap V)^{\perp} )$
+** úhel
+**** přímek
+ $\angle (A+\langle \bm{u}\rangle,B+\langle{v}\rangle)=\angle(\bm{u},\bm{v})$
+**** nadrovin
+ $\angle (A+U,B+V)=\angle(U,V)=\angle(U^{\perp},V^{\perp})$
+**** nadroviny a přímky
+ $\angle (A+\langle \bm{u}\rangle,B+V)=\angle(\bm{u},V)=\frac{\pi}{2}-\angle(\bm{u},V^{\perp})$
+** Vzdálenost
+***  bodů
+$d(A,B)=\|B-A\|$
+*** podprostorů
+$d(A+U,B+V)= \min\{d(A+\bm{u},B+\bm{v}); u\in U, v\in V\}$
+**** rovnoběžných
++ $A+U,B+V$
++ $U \subseteq\subseteq V$
++ $A+V^{\perp} \cap B+V=C$
++ $d(A+U,B+V)=d(A,C)$
+*** Příklad
+$d(p,\rho)=?$
++ $p= [6,0,1,0]+\langle(1,3,-1,2)\rangle$,
++ $\rho = [-2,4,5,3]+\langle (1,2,3,1),(2,5,2,3)\rangle$
+** Vzdálenost mimoběžek
++ v $\mathbb{R}^3$
++ $A+\langle \bm{u}\rangle$, $B+\langle\bm{v}\rangle$
++ $\bm{w}\perp \bm{u}$, $\bm{w}\perp \bm{v}$
++ $C+\langle\bm{w}\rangle$ příčka ve směru $\bm{w}$
++ $A+\langle\bm{u}\rangle\cap C+\langle\bm{w}\rangle=A_{C}$
++ $B+\langle\bm{v}\rangle\cap C+\langle\bm{w}\rangle=B_{C}$
++ $d(A+\langle\bm{u}\rangle,B+\langle\bm{v}\rangle)=d(A_{C},B_{C})$
+*** Příklad
+$d(p,q)=?$
++ $p=[1,-8,11]+\langle (2,3,-6)\rangle$
++ $q=[8,3,13]+\langle (6,-1,12)\rangle$

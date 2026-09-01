@@ -1,6 +1,6 @@
 #+TITLE: Relace Algebry
 #+language: cz
-#+latex_class_options: [bigger]
+#+latex_class_options: [bigger,aspectratio=169]
 #+beamer_theme: Bergen
 #+beamer_color_theme: crane
 #+BEAMER_FRAME_LEVEL: 2
@@ -9,6 +9,20 @@
 #+options: h:2
 
 * Relace
+** Kartézský součin, mocnina
++ $A=\{a,b,c\}$; $B=\{1,2\}$
++ $X \times Y = \{(x,y); x\in X\wedge y\in Y\}$
+  * $A \times B=\{(a,1),(c,2),\dots \}$
++ $X^{2}=X \times X$
+  * $B^{2}=\{(1,1),(1,2),(2,1),(2,2)\}$
++ $|X \times Y|=?$
+  * $|A\times B|=?$
+  * $|A^{2}|=?$
+** Prázná množina
++ $\emptyset=\{\}$
++ $|\emptyset|=?$
++ $2^{\emptyset}=?$
++ $|\{\emptyset\}|=?$
 ** Relace mezi množinami
 \[\sim\subseteq A\times B\]
 ***  Zápis
@@ -19,7 +33,11 @@
 *** Skládaní
 \[R \subseteq A \times B,\ S\subseteq B \times C\]
 \[a(R\circ S)c \iff \exists b\in B;\ aRb \wedge bSc \]
+
+** Zakreslení relace
 *** Zakreslení relace
++ uzlový graf
++ kartézský graf 
 viz seminář
 ** Relace na množině
 \[\sim\subseteq A^{2} \]
@@ -74,10 +92,10 @@ viz [[https://cs.wikipedia.org/wiki/Hasse%C5%AFv_diagram][WP]]
 *** Bijekce
 + vzájemně jednoznačné zobrazení
 + Injekce i surjekce zároveň
-** Otázky
-+ Kdy je inverzní relace k zobrazení zobrazením?
-+ Kdy je složení dvou zobrazení zobrazením (bijekcí, injekcí, surjekcí)?
-+ Kdy je složení dvou zobrazení injekcí, surjekcí, bijekcí co platí pro původní zobrazení?
+# ** Otázky
+# + Kdy je inverzní relace k zobrazení zobrazením?
+# + Kdy je složení dvou zobrazení zobrazením (bijekcí, injekcí, surjekcí)?
+# + Kdy je složení dvou zobrazení injekcí, surjekcí, bijekcí co platí pro původní zobrazení?
 
 ** Mohutnost množiny
 + $|A|$
@@ -103,6 +121,16 @@ viz [[https://cs.wikipedia.org/wiki/Hasse%C5%AFv_diagram][WP]]
 #+ATTR_latex: :mode math :environment pmatrix :align ccccc :math-prefix p^{-1}= :math-suffix ,\ p\circ p^{-1}=?
 | 1 | 2 | 3 | 4 | 5 |
 | 5 | 1 | 3 | 2 | 4 |
+** Znaménko permutace
+*** Inverze
+v permutaci $p$
++ $(a,b)$ takové, že $a<b$ a $p(a)>p(b)$,
++ $inv(p) = \{(a,b); (a,b) \text{ je inverze}\}$
+*** znaménko
+permutace $p$
++ $sgn(p) = (-1)^{|inv(p)|}$
++ $-1$  liché
++ $+1$  sudé
 ** Binární operace
 *** Definice
 \[ \otimes\colon A\times A \to A \]
@@ -171,3 +199,30 @@ $(A;\otimes)$
 + $(\mathbb{Z}[\sqrt{5}],+,\cdot), (\mathbb{Q}[\sqrt{2}],+,\cdot)$,
 + hyperkomplexní čísla
 + Galoisovy tělesa
+
+** Podalgebra
+*** Podgrupoid $(H,*)$
+grupoidu $(G;*)$
++ $H\subseteq G$
++ $x,y\in H \implies x * y \in H$
++ $H$ nosná množina
++ $(\mathbb{C}, \cdot)$, množina $\{a+bi\in \mathb{C}; |a+bi|=1\}$, tj. $\sqrt{a^{2}+b^{2}}=1$
+
+*** Podokruh
+$(H,+,\cdot)$ okruhu $(G;+,\cdot)$
++ $H\subseteq G$
++ $x,y\in H \implies x + y, x\cdot y \in H$
++ $x \in H \implies -x \in H$, (aby byl $(H;+,\cdot)$ okruh)
++ $(\mathbb{Z};+,\cdot)$, sudá čísla $\mathbb{S}$
+** Homomrfismus
+*** grup
++ Homomorfismus $f$ z grupy $(G; *)$ do grupy $(H;\odot)$
+1. $f\colon G \to H$
+2. $f(x*y)=f(x)\odot f(y)$
++ $\ln(x\cdot y)= \ln(x)+\ln(y)$  (z $(\mathbb{R^{+}},\cdot)$ na $(\mathbb{R},+)$)
+*** okruhů
++ Homomorfismus $f$ z okruhu $(G; +,\cdot)$ do okruhu $(H;\oplus,\odot)$
+1. $f(x+y)=f(x)\oplus f(y)$
+2. $f(x\cdot y)=f(x)\odot f(y)$
++ $f\colon \mathbb{Z} \to \mathbb{Z}_{5}$
++ $[x]_{5}+[y]_{5}=[x+y]_{5}$, $[x]_{5}\cdot [y]_{5}=[x\cdot y]_{5}$

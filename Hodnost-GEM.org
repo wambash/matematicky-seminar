@@ -1,0 +1,83 @@
+#+TITLE: Hodnost GEM
+#+language: cz
+#+latex_class_options: [bigger,aspectratio=169]
+# +latex_class_options: [bigger]
+#+beamer_theme: Bergen
+#+beamer_color_theme: crane
+#+BEAMER_FRAME_LEVEL: 2
+#+latex_header: \usepackage{bm}
+#+latex_header_extra: \usepackage[czech]{babel}
+#+options: h:2
+
+* Soustava lineárních rovnic
+** Ekvivalentní řádkové úpravy
+*** Elementární
++ prohození dvou řádků
++ vynásobení řádku nenulovým /číslem/
++ přičtení k řádku lineární kombinaci ostatních řádků
++ vynechání/přidání nulového řádku
+*** Ekvivalence
+$A \sim B$
+*** Hodnost
+$h(A)$ počet lineárně nezávislých řádků
++ $h(A)=h(A^T)$
++ $h(A)\le m \min n$
+
+**  Soustava lineárních rovnic
+***  Soustava
+$m$ rovnic o $n$ neznámých
+ #+ATTR_LATEX: :mode math :environment matrix
+  | a_{11}x_1 | +      | a_{12}x_2 | + | \cdots | + | a_{1n}x_{n} | =      | b_{1} |
+  | a_{21}x_1 | +      | a_{22}x_2 | + | \cdots | + | a_{2n}x_{n} | =      | b_{2} |
+  |           | \vdots |           |   | \ddots |   |             | \vdots |       |
+  | a_{m1}x_1 | +      | a_{m2}x_2 | + | \cdots | + | a_{mn}x_{n} | =      | b_{m} |
+*** Maticově
+‌\[A\cdot \bm{x}^{T}=b^{T}\]
+*** Homogenní
+$\bm{b}=\bm{o}$
+‌\[A\cdot \bm{x}^{T}=\bm{o}^{T}\]
+** Matice
+*** soustavy
+#+ATTR_LATEX: :mode math :environment pmatrix :math-prefix A=
+  | a_{11} | a_{12} | \cdots | a_{1n} |
+  | a_{21} | a_{22} | \cdots | a_{2n} |
+  | \vdots | \vdots | \ddots | \vdots |
+  | a_{m1} | a_{m2} | \cdots | a_{mn} |
+**** Rozšířená
+#+ATTR_LATEX: :mode math :environment pmatrix :math-prefix (A|\bm{b}^T)=
+  | a_{11} | a_{12} | \cdots | a_{1n} | \vline | b_{1}  |
+  | a_{21} | a_{22} | \cdots | a_{2n} | \vline | b_{2}  |
+  | \vdots | \vdots | \ddots | \vdots | \vline | \vdots |
+  | a_{m1} | a_{m2} | \cdots | a_{mn} | \vline | b_{m}  |
+** Řešení
+*** Žádné
+ $h(A) < h(A|\bm{b}^T)$
+*** Právě-jedno
+$h(A)=h(A|\bm{b}^{T})=n$
+*** Více
+$h(A)=h(A|\bm{b}^{T})<n$
++ závislé na jednom nebo více parametrů
+*** Homogenní
+vždy existuje řešení
+**** Triviální
+$h(A)=n$, $\bm{x}=o$
+**** Netriviální
+$h(A)< n$
+
+** Způsob řešení
+***  Gaussova
+    + Pomocí EŘEO upravit na schodovitý tvar
+      - součtová metoda
+    + Dořešit dosazovací metodou
+    + nebo  zpětný chod
+**** Jordanova
+ Upravíme co nejvíce sloupců ($m$), tak  aby zde byla jen jedna $1$ jinak $0$.
+*** Ověření
+Z maticového zápisu pomocí násobení matic.
+
+** Příklad
+#+LATEX: \arraycolsep=1.0pt
+#+ATTR_LATEX: :mode math :environment array :align rcrcrcr
+    | x   | - | y  | + | z  | = |  0 |
+    | -2x | - | 2y | - | z  | = | -1 |
+    | x   | - | 3y | + | 2z | = |  1 |
