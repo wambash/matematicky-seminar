@@ -47,19 +47,19 @@ $-A=(-a_{ij})_{m\times n}$
 \[ c_{ik}=a_{i1}b_{1k}+a_{i2}b_{2k}+\dots+a_{in}b_{nk}\]
 #+ATTR_LATEX: :mode math :environment array :align ccccc|ccccc
 |             |        |             |        |             | b_{11} | \cdots | \bm{b_{1k}} | \cdots | b_{1p} |
-|             |        |             |        |             | \vdots | \ddots | \vdots      | \udots | \vdots |
+|             |        |             |        |             | \vdots | \ddots | \vdots      | \ddots | \vdots |
 |             |        |             |        |             | b_{j1} | \cdots | \bm{b_{jk}} | \cdots | b_{jp} |
-|             |        |             |        |             | \vdots | \udots | \vdots      | \ddots | \vdots |
+|             |        |             |        |             | \vdots | \ddots | \vdots      | \ddots | \vdots |
 |             |        |             |        |             | b_{n1} | \cdots | \bm{b_{nk}} | \cdots | b_{np} |
 |-------------+--------+-------------+--------+-------------+--------+--------+-------------+--------+--------|
 | a_{11}      | \cdots | a_{1j}      | \cdots | a_{1n}      | c_{11} | \cdots | c_{1k}      | \cdots | c_{1p} |
-| \vdots      | \ddots | \vdots      | \udots | \vdots      | \vdots | \ddots | \vdots      | \udots | \vdots |
+| \vdots      | \ddots | \vdots      | \ddots | \vdots      | \vdots | \ddots | \vdots      | \ddots | \vdots |
 | \bm{a_{i1}} | \cdots | \bm{a_{ij}} | \cdots | \bm{a_{in}} | c_{i1} | \cdots | \bm{c_{ik}} | \cdots | c_{ip} |
-| \vdots      | \udots | \vdots      | \ddots | \vdots      | \vdots | \udots | \vdots      | \ddots | \vdots |
+| \vdots      | \ddots | \vdots      | \ddots | \vdots      | \vdots | \ddots | \vdots      | \ddots | \vdots |
 | a_{m1}      | \cdots | a_{mj}      | \cdots | a_{mn}      | c_{m1} | \cdots | c_{mk}      | \cdots | c_{mp} |
 ** Vlastnosti
 - $(M_{m \times n}(\mathbb{I}),+,-,O)$ je komutativní grupa
-#+ATTR_LATEX: :mode math :environment align*
+#+ATTR_LATEX: :mode math :environment aligned
 | (A\cdot B)\cdot C | = A\cdot (B\cdot C)  | (d f)  A         | = d (f  A)          |
 | d A\cdot B        | = d (A \cdot B)      | A \cdot d B      | = d (A \cdot B)     |
 | A^{T}+B^{T}       | = (A+B)^{T}          | A^{T}\cdot B^{T} | =(B \cdot A)^T      |
