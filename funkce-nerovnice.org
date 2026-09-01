@@ -16,7 +16,7 @@
 **** definiční
 $D_{f}=A$
 **** hodnot
-$H_{f}=f(A)=\{b\in \mathbb{R}; \exist a\in A;\ f(a)=b \}$
+$H_{f}=f(A)=\{b\in \mathbb{R}; \exists a\in A;\ f(a)=b \}$
 *** Parita
 **** sudá
 $f(-x)=f(x)$

@@ -123,8 +123,8 @@ derivace
 * Posloupnosti
 ** Posloupnost
 *** Definice
-   - $\mathsf{a}\colon \mathbb{N}_{0}\to M$, popř. z \mathbb{N}
-   - $(a_0,a_1,a_2,\dots, a_{i},\dost)$
+   - $\mathsf{a}\colon \mathbb{N}_{0}\to M$, popř. z $\mathbb{N}$
+   - $(a_0,a_1,a_2,\dots, a_{i},\dots)$
    - polynom lze chápat jako posloupnost, jak?
 *** Zadání
    - \(i\)-tým členem :: $a_{i}=\frac{i}{i+1}$
@@ -136,11 +136,11 @@ derivace
    - $S$ je uspořádaná množina
 *** ohraničená
 **** zdola
-     - $\exist l \in S,\,\forall i\in \mathbb{N}_{0};\ l\le a_{i}$
+     - $\exists l \in S,\,\forall i\in \mathbb{N}_{0};\ l\le a_{i}$
      - $l$ dolní závora
 
 **** shora
-     - $\exist u \in S,\,\forall i\in \mathbb{N}_{0};\ u\ge a_{i}$
+     - $\exists u \in S,\,\forall i\in \mathbb{N}_{0};\ u\ge a_{i}$
      - $g$ horní závora
 **** ohraničená
      - zdola i shora
