@@ -15,7 +15,7 @@
 ** Vektorový prostor (modul)
 \[(V,+,\mathcal{T},\cdot)\]
 - $(V,+)$ je Abelovská grupa
-- $\mathcal{T}$ je těleso
+- $\mathcal{T}$ je těleso s nosnou množinou $T$
 - $\cdot\colon T\times V \to V$
 - platí:
   1. $a\cdot(\bm{u}+\bm{v})= a\cdot\bm{u}+a\cdot\bm{v}$
@@ -33,7 +33,7 @@ $a,b,0,1\in T$
   - $(\mathbb{R}^{n},+,\mathbb{R},\cdot)$
   - $(\mathbb{Z}_{p}^{n},+,\mathbb{Z}_{p},\cdot)$
 - $(\mathbb{R}^{n},+,\mathbb{Q},\cdot)$
-- $(M(\mathcal{T})_{n x m},+,\mathcal{T},\cdot)$
+- $(M(\mathcal{T})_{n \times m},+,\mathcal{T},\cdot)$
 - $(\mathcal{T}[x],+,\mathcal{T},\cdot)$
 ** Lineární kombinace
     \[a_{1}\bm{u}_{1}+a_{2}\bm{u}_{2}+\cdots+ a_{n}\bm{u}_{n}\]
@@ -64,7 +64,7 @@ $V$
 + lineárně nezávislá množina generátorů.
 + standardní báze $\mathbb{R}^{3}$: $(1,0,0)$, $(0,1,0)$, $(0,0,1)$
 *** Dimenze
-$\V$
+$\dim V$
 + počet prvků báze
 + $\dim V=n$
 
@@ -106,7 +106,7 @@ $\bm{u}\perp\bm{v}\iff \bm{u}\cdot\bm{v}=0$
 + $\{\bm{u}_1,\bm{u}_2,\dots,\bm{u}_n\}$
 + $\bm{v}_{1}=\bm{u}_{1}$
 + $\bm{v}_{2}=\bm{u}_{2}+c \bm{v}_{1}$;  $\bm{v}_{2}\perp \bm{v}_{1}$
-+ $\bm{v}_{3}=\bm{u}_{2}+c_{1}\bm{v}_{1}+c_{2}\bm{v}_{2}$;  $\bm{v}_{3}\perp \bm{v}_{1}$, $\bm{v}_{3}\perp \bm{v}_{2}$
++ $\bm{v}_{3}=\bm{u}_{3}+c_{1}\bm{v}_{1}+c_{2}\bm{v}_{2}$;  $\bm{v}_{3}\perp \bm{v}_{1}$, $\bm{v}_{3}\perp \bm{v}_{2}$
 + $\vdots$
 *** Normalizace
  $\bm{w}_i=\frac{1}{\|\bm{v}_{i}\|} \bm{v}_{i}$
