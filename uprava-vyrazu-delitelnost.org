@@ -11,7 +11,7 @@
 - Přirozená čísla :: $\mathbb{N}=\{1,2,\dots\}$; $\mathbb{N}_{0}=\{0,1,2,\dots\}$
 - Celá čísla :: $\mathbb{Z}=\{\dots,-3,-2,-1,0,1,2,3, \dots\}$
 - Racionální čísla :: $\mathbb{Q}=\{\frac{a}{b}; a,b\in \mathbb{Z}, b\neq 0\}$; zlomky celých čísel
-- Realná čísla :: $\mathbb{R}$, např.
+- Reálná čísla :: $\mathbb{R}$, např.
   $\sqrt{2}, e, \pi, \dots$
 - Komplexní čísla :: $\mathbb{C}$, $a+bi$, kde $a$ a $b$ jsou z $\mathbb{R}$ a $i^{2}=-1$
 
@@ -77,7 +77,7 @@ $z^{n}=\underbrace{ z \cdot z \cdot z \cdots z }_{n}$
  + $(a-b)^2=a^2-2ab+b^2$
  + $(a+b)^2=a^2+2ab+b^2$
  + $a^{2}-b^2=(a+b)\cdot (a-b)$
- + $(a+b)^{3}=a^{3}+3a^{2}b+3ab^{2}-b^{3}$
+ + $(a+b)^{3}=a^{3}+3a^{2}b+3ab^{2}+b^{3}$
  + $a^{3}+b^{3}=(a+b)(a^{2}-ab+b^{2})$
  + $a^{3}-b^{3}=(a-b)(a^{2}+ab+b^{2})$
  + $(a+b)^{n}=???$, $n\in \mathbb{N}$
@@ -111,7 +111,7 @@ $a|b$
 ** Prvočíslo
 $2,3,5,7,11, 13,\dots$
 + přirozené číslo dělitelné (právě) dvěma (různými) přirozenými čísly (sebou a jedničkou)
-+ prvočíselný rozklad, každé přirozené číslo větší než 2, lze jednoznačně (až na pořadí) zapsat jako součin prvočísel
++ prvočíselný rozklad, každé přirozené číslo > 1 (ostře větší, tj. $n>1$), lze jednoznačně (až na pořadí) zapsat jako součin prvočísel
 + kdy je číslo dělitelné $2,3,4,5,6,8,9,10,\dots$ ?
 + číslo složené
 ** Největší Společný Dělitel (NSD,gcd)
@@ -141,7 +141,7 @@ $\mathbb{Z}_{m}=\{0_{m},1_{m}, \dots, (m-2)_{m}, (m-1)_{m}\}$
   - $a$ je reprezentant třídy $a_{m}$
   - $z\in a_{m}$ právě tehdy, když $z \cong_{m} a$, resp. $z \mod m = a$
 + $a_{m} +_{m} b_{m} = (a+b \mod m)_{m}$
-+ $a_{m} \cdot_{m} b_{m} = (a+b \mod m)_{m}$
++ $a_{m} \cdot_{m} b_{m} = (a\cdot b \mod m)_{m}$
 ** Inverze se zbytkových třídách
 + $-a_{m}=(m-a)_{m}$
 + $a_{m}^{-1}= ???$
