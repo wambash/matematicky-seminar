@@ -15,12 +15,12 @@
 + Nejmenší přirozené číslo takové, že nelze vyjádřit méně jak dvaceti slovy.
 + Množina všech množin, neobsahujících sama sebe.
   + Seznam všech seznamů, které samy sebe neobsahují,
-  + [[wikipedia:cs:Russellův_paradox][Russelův paradox]]
+  + [[https://cs.wikipedia.org/wiki/Russell%C5%AFv_paradox][Russelův paradox]]
 ** Symbolický zápis
 *** Symboly užívané v matematice
 - $1,2, x,y, \alpha, \beta,\dots$
 - $+,-,\cdot,\ =,<,\neq,(,),\dots$
-- $\neg,\vee,\wedge,\imply,\iff,\dots$
+- $\neg,\vee,\wedge,\Rightarrow,\iff,\dots$
 - $\cup,\cap, \setminus, \subseteq,\dots$
 - $\odot, \rightsquigarrow, \gg, \Box, \dots$
 *** Zápis pomocí symbolů
@@ -36,7 +36,7 @@
   + bezesporná
   + nezávislá
   + úplná
-+ [[wikipedia:cs:Gödelovy_věty_o_neúplnosti][Gödelovy věty o neúplnosti]]
++ [[https://cs.wikipedia.org/wiki/G%C3%B6delovy_v%C4%9Bty_o_ne%C3%BAplnosti][Gödelovy věty o neúplnosti]]
 
 ** Matematický text
 *** Definice
@@ -48,7 +48,7 @@
 + uvedené věty jsou dokázaný, pomocí logiky, teorie množin a dříve dokázaných vět
 ** Slavné matematické modely
 *** Eukleidovská geometrie
-+ (Euklidovy) [[wikipedia:cs:Eukleidovy_Základy][Základy]]
++ (Euklidovy) [[https://cs.wikipedia.org/wiki/Eukleidovy_Z%C3%A1klady][Základy]]
 + cca 300 př. n. l.
 *** Peanova aritmetika
 + nula je (přirozené) číslo
