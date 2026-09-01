@@ -126,7 +126,7 @@ $2,3,5,7,11, 13,\dots$
 + $\frac{4\,685\,653}{9\,371\,306}+\frac{3\,346\,895}{10\,040\,685}$
 * Modulární aritmetika
 ** Modulární kongruence
-$a ≅ b\quad (mod\ m);\ a\cong_{m} b$
+$a \cong b\quad (mod\ m);\ a\cong_{m} b$
 + $a\cong_{m} b$ právě tehdy, když  $m|(a-b)$
 + $a=b+m\cdot z;\ z\in\mathbb{Z}$
 + $a \mod m = b \mod m$
