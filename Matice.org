@@ -6,7 +6,7 @@
 #+BEAMER_FRAME_LEVEL: 2
 #+latex_header: \usepackage{bm}
 #+latex_header_extra: \usepackage[czech]{babel}
-#+options: h:2
+#+options: H:2
 
 * Matice
 ** Matice
@@ -18,33 +18,33 @@
 | a_{21} | a_{22} | \dots  | a_{2n} |
 | \vdots | \vdots | \ddots | \vdots |
 | a_{m1} | a_{m2} | \dots  | a_{mn} |
-*** Vektory
-(aritmetické)
-**** Řádkové
+** Vektory (aritmetické)
+*** Řádkové
 $\bm{u}=(u_{i})_{1\times n}= (u_{1},u_{2},\dots,u_{n})$
-**** Sloupcové
+*** Sloupcové
 #+ATTR_LATEX: :mode math :environment pmatrix :math-prefix \bm{v}^{T}=(v_{j})_{m\times 1}=
 | v_1    |
 | \vdots |
 | v_m    |
 ** Porovnání matic a operace s maticemi
-*** rovnost
+*** Rovnost
 $A=B \iff  a_{ij}=b_{ij}$
-*** transpozice
+*** Transpozice
 $A^{T}=(a_{ij})_{m\times n}^{T}=(a_{ji})_{n \times m}$
-*** součet
+*** Součet
 $A+B=(a_{ij}+b_{ij})$
-*** nulová
+*** Nulová
 $O=(0)_{m\times n}$
-*** opačná
+*** Opačná
 $-A=(-a_{ij})_{m\times n}$
-*** násobení
+*** Násobení
 (skalárem) $dA=(da_{ij})$
-*** lineární kombinace
+*** Lineární kombinace
  $c A + d B = (c a_{ij}+d b_{ij})$
 ** Násobení matic
 \[A \cdot B = (a_{ij})_{m\times n}\cdot (b_{jk})_{n\times p}=(c_{ik})_{m\times p} = C\]
 \[ c_{ik}=a_{i1}b_{1k}+a_{i2}b_{2k}+\dots+a_{in}b_{nk}\]
+#+LATEX: \small
 #+ATTR_LATEX: :mode math :environment array :align ccccc|ccccc
 |             |        |             |        |             | b_{11} | \cdots | \bm{b_{1k}} | \cdots | b_{1p} |
 |             |        |             |        |             | \vdots | \ddots | \vdots      | \ddots | \vdots |
@@ -63,8 +63,9 @@ $-A=(-a_{ij})_{m\times n}$
 | (A\cdot B)\cdot C | = A\cdot (B\cdot C)  | (d f)  A         | = d (f  A)          |
 | d A\cdot B        | = d (A \cdot B)      | A \cdot d B      | = d (A \cdot B)     |
 | A^{T}+B^{T}       | = (A+B)^{T}          | A^{T}\cdot B^{T} | =(B \cdot A)^T      |
-| d (A+B)           | = d A+ d B           | (d + f) A        | = d A + f A         |
-| A \cdot (B+C)     | = A B +A C           | (A+B)\cdot C     | = A C+B C           |
+| d (A+B)           | = d A + d B          | (d + f) A        | = d A + f A         |
+| A \cdot (B+C)     | = A\cdot B + A\cdot C | (A+B)\cdot C     | = A\cdot C + B\cdot C |
+| A+B               | = B+A                | (A^{T})^{T}       | = A                  |
 
 ** Lineární závislost
 *** Nezávislé

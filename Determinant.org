@@ -12,23 +12,23 @@
 
 * Determinant
 ** Znaménko permutace
-*** permutace
-#+ATTR_latex: :mode math :environment pmatrix :aligned ccccc :math-prefix p= :math-suffix ,\
+*** Permutace
+#+ATTR_latex: :mode math :environment pmatrix :align ccccc :math-prefix p= :math-suffix ,\
 |   1 |   2 | \dots | n-1     | n     |
 | p_1 | p_2 | \dots | p_{n-1} | p_{n} |
-*** inverze
-    $i<j$, $p_j >p_i$
-*** znaménko
-  $sgn\, p=(-1)^{c}$, kde $c$ je počet inverzí
+*** Inverze
+    $i<j$, $p_i>p_j$
+*** Znaménko
+  $\operatorname{sgn}\,p=(-1)^{c}$, kde $c$ je počet inverzí
 *** Příklad
-#+ATTR_latex: :mode math :environment pmatrix :aligned ccccc :math-prefix q= :math-suffix ,\
+#+ATTR_latex: :mode math :environment pmatrix :align ccccc :math-prefix q= :math-suffix ,\
 | 1 | 2 | 3 | 4 | 5 |
 | 2 | 4 | 3 | 5 | 1 |
 
 + počet inverzí $q$?
-+ $sgn\, q=?$
++ $\operatorname{sgn}\,q=?$
 ** Determinant
-    \[|A_{n}|= \sum_{p=(p_{1},p_{2}, \dots, p_{n})} sgn\, p\cdot a_{1p_{1}} a_{2 p_{2}}\cdots a_{np_{n}} \]
+    \[|A_{n}|= \sum_{p=(p_{1},p_{2}, \dots, p_{n})} \operatorname{sgn}\,p\cdot a_{1p_{1}} a_{2 p_{2}}\cdots a_{np_{n}} \]
 *** $n=1$
    $|A|=|a_{11}|=a_{11}$
 *** Křížové
@@ -86,17 +86,17 @@ podle \(i\)-tého řádku
 + $|A\cdot B|=|A|\cdot|B|$
 + $|A|=|A^{T}|$
 +
-   #+ATTR_latex: :mode math :environment array :aligned |c|c|c|l|c|c|c|c|c|c|l|
+   #+ATTR_latex: :mode math :environment array :align |c|c|c|c|c|c|c|c|c|
    | \bm{a}_{1}        |           | \bm{a}_{1} |   | \bm{a}_{1} |   | \bm{a}_{1}             |     | \bm{a}_{1} |
    | \vdots            |           | \vdots     |   | \vdots     |   | \vdots                 |     | \vdots     |
-   | k\cdot \bm{a_{i}} |           | \bm{a_{i}} |   | \bm{a_{i}} |   | \bm{a_{i}}+k\bm{a}_{j} |     | \bm{a_{j}} |
+   | k\cdot \bm{a}_{i} |           | \bm{a}_{i} |   | \bm{a}_{i} |   | \bm{a}_{i}+k\bm{a}_{j} |     | \bm{a}_{j} |
    | \vdots            | = k \cdot | \vdots     | , | \vdots     | = | \vdots                 | = - | \vdots     |
    | \bm{a}_{j}        |           | \bm{a}_{j} |   | \bm{a}_{j} |   | \bm{a}_{j}             |     | \bm{a}_{i} |
    | \vdots            |           | \vdots     |   | \vdots     |   | \vdots                 |     | \vdots     |
    | \bm{a}_{n}        |           | \bm{a}_{n} |   | \bm{a}_{n} |   | \bm{a}_{n}             |     | \bm{a}_{n} |
 ** Cramerovo pravidlo
     \[A\cdot \bm{x}^{T}=\bm{b}^{T}\]
-    + pokud má právě jedno řešení, pak
+    + pokud je soustava čtvercová a má právě jedno řešení ($|A|\neq 0$), pak
     \[ x_{j}=\frac{|B_{j}|}{|A|}\,, \]
     kde
    #+ATTR_latex: :mode math :environment vmatrix :math-prefix B_j=
@@ -117,13 +117,13 @@ podle \(i\)-tého řádku
 ** Vlastní čísla (vektory) matice
     \[A\cdot \bm{x}^{T}= \lambda \bm{x}^{T}\]
     + $\lambda$ vlastní číslo
-    + $\bm{x}$ vlastní vektor
-*** Charakteris.
+    + $\bm{x}\neq\bm{o}$ vlastní vektor
+*** Charakteristický
 polynom $|A-\lambda\cdot I|$
 *** Výpočet
-**** čísla
+**** Čísla
 $|A-\lambda\cdot I|=0$
-**** vektorů
+**** Vektorů
 $(A-\lambda\cdot I)\bm{x}^{T}=\bm{o}^{T}$
 ** Najděte vlastní čísla a vektory
 #+ATTR_latex: :mode math :environment pmatrix  :math-prefix A=
