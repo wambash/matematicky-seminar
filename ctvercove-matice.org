@@ -11,7 +11,7 @@
 
 * Čtvercová matice
 
-** Čtvercová Matice
+** Čtvercová matice
 - $A\colon \{1,\dots, n\}^{2} \to \mathbb{I}$
 - $A \in M_{n}(\mathbb{I}),\ a_{ij}\in \mathbb{I}$
 #+ATTR_LATEX: :mode math :environment pmatrix :math-prefix A= :math-suffix =(a_{ij})_{n}
@@ -29,14 +29,14 @@
    |      0 |      0 |      0 | \cdots |      1 |      0 |
    |      0 |      0 |      0 | \cdots |      0 |      1 |
 ** Algebry matic
-+ $(M(\mathbb{I})_{n}, +,-,O)$ je Abelovská grupa,
-+ $(M(\mathbb{I})_{n}, \cdot, I)$ je monoid,
-  - $(M(\mathbb{T})_{n}, \cdot, I)$ existují inverzní prvky?
-+ $(M(\mathbb{I})_{n}, +, \cdot)$ je okruh
-  - Existují, zde netriviální dělitele nuly?
++ $(M_{n}(\mathbb{I}), +,-,O)$ je Abelovská grupa,
++ $(M_{n}(\mathbb{I}), \cdot, I)$ je monoid,
+  - $(M_{n}(\mathbb{T}), \cdot, I)$ existují inverzní prvky?
++ $(M_{n}(\mathbb{I}), +, \cdot)$ je okruh
+  - Existují zde netriviální dělitele nuly?
 ** Inverzní matice
 \[A^{-1}\cdot A=I=A\cdot A^{-1} \]
-** Soustava
+** Hledáme $X$, aby $A\cdot X=I$
 #+ATTR_latex: :mode math :environment pmatrix :math-suffix \cdot
   | a_{11} | a_{12} | a_{13} |
   | a_{21} | a_{22} | a_{23} |
@@ -71,6 +71,8 @@
   | a_{11} | a_{12} | a_{13} | \vline | 1 | 0 | 0 |
   | a_{21} | a_{22} | a_{23} | \vline | 0 | 1 | 0 |
   | a_{31} | a_{32} | a_{33} | \vline | 0 | 0 | 1 |
+
+\[(A\mid I)\sim(I\mid A^{-1})\]
 
 ** Řešíme pomocí Cramerova pravidla
 #+ATTR_latex: :mode math :environment pmatrix :math-prefix \frac{1}{|A|}
@@ -111,17 +113,17 @@ inverzní matici k
 
 ** Regulární matice
 *** Regulární
-$A\in M_{n}(\mathbb{T})$ je regulární, pokud má
-+ všechny řádky (sloupce) lineárně nezávislé
+$A\in M_{n}(\mathbb{T})$ je regulární, právě když (ekvivalentně)
++ všechny řádky (sloupce) jsou lineárně nezávislé
 + $h(A)=n$
 + $|A|\neq 0$
-+ $A^{-1}$
++ existuje inverzní matice $A^{-1}$
 
 *** Grupy
-+ $(M^{R}_{n}(\mathbb{T}), \cdot, {}^{-1},I)$ je grupa,
++ $(M^{R}_{n}(\mathbb{T}), \cdot, {}^{-1},I)$ je grupa
   + ($M^R$ je množina regulárních matic)
-+ $(M^{J}_{n}(\mathbb{I}), \cdot, {}^{-1},I)$ je grupa, (proč?)
-  + ($M^J$ je množina matic s determinantem rovný $1$)
++ $(M^{J}_{n}(\mathbb{I}), \cdot, {}^{-1},I)$ je grupa (proč?)
+  + ($M^J$ je množina matic s determinantem rovným $1$)
 
 ** Maticové rovnice
 1.
